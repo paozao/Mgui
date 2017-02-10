@@ -202,7 +202,11 @@
 					"example/touchFeel.html",
 					"example/floatingMenu.html",
 					"example/redPoint.html",
-					"example/shoufengqin.html"
+					"example/shoufengqin.html",
+					"example/goodModal.html",
+					"example/loading.html",
+					"example/shange.html",
+					"example/topMsg.html"
 				],
 				"priority": 0
 			},
@@ -225,14 +229,19 @@
 					"css/mfb.css",
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"css/mfb.min.css",
+					"js/mfb.min.js"
 				],
 				"refer": [],
 				"priority": 0
 			},
 			"example/redPoint.html": {
 				"resources": [
-					"images/logo.png"
+					"images/logo.png",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -243,6 +252,44 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"images/cbd.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/goodModal.html": {
+				"resources": [
+					"images/muwu.jpg",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/loading.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/loaderskit.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/shange.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/topMsg.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
