@@ -200,7 +200,9 @@
 				],
 				"refer": [
 					"example/touchFeel.html",
-					"example/floatingMenu.html"
+					"example/floatingMenu.html",
+					"example/redPoint.html",
+					"example/shoufengqin.html"
 				],
 				"priority": 0
 			},
@@ -227,12 +229,28 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"example/redPoint.html": {
+				"resources": [
+					"images/logo.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/shoufengqin.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"images/cbd.jpg"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
 				"images/qrcode.png",
-				"images/logo.png",
 				"images/60x60.gif",
 				"js/mui.js",
 				"css/mui.css",

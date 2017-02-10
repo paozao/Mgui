@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <title>小红点</title>
+	    <link href="../css/mui.min.css" rel="stylesheet"/>
+	    <style type="text/css">
+	    	.mui-good-redPoint{
+	    		position: absolute;
+	    		height: 16px;
+			    margin-left: 5px;
+			    margin-top: -5px;
+			    top: 50%;
+			    width: 16px;
+	    	}
+	    	.mui-good-redPoint:before{
+	    		position: absolute;
+	    		background: transparent;
+			    border: 3px solid red;
+			    content: "";
+			    height: 12px;
+			    left: -5px;
+			    opacity: 0;
+			    top: -5px;
+			    width: 12px;
+			    border-radius: 50%;
+			    -webkit-animation: sonar 2s ease-out infinite;
+			    animation: sonar 2s ease-out infinite
+	    	}
+	    	.mui-good-redPoint:after{
+	    		background-color: red;
+			    content: "";
+			    height: 8px;
+			    left: 0;
+			    position: absolute;
+			    width: 8px;
+			    border-radius: 50%;
+	    	}
+	    	@-webkit-keyframes sonar{
+	    		from{
+	    			opacity: 1;
+	    			-webkit-transform: scale(0.3);
+	    		}
+	    		to{
+	    			opacity: 0;
+	    			-webkit-transform: scale(1);
+	    		}
+	    	}
+	    	.mui-good-redPoint-noanimate{
+	    		display: inline-block;
+	    		position: relative;
+	    		border-radius: 50%;
+	    		background-color: #00cc00;
+	    		border: 2px solid white;
+	    		height: 10px;
+			    width: 10px;
+			    vertical-align: top;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">小红点</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<p>默认样式</p>
+			</div>
+			<ul class="mui-table-view">
+		        <li class="mui-table-view-cell">
+		            Item 1<span class="mui-good-redPoint"></span>
+		        </li>
+		    </ul>
+		    <div class="mui-content-padded">
+				<p>位置改变</p>
+			</div>
+		    <ul class="mui-table-view">
+	            <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right">
+		                 Item 2<span class="mui-good-redPoint" style="right: 30px;"></span>
+		            </a>
+		        </li>
+	        </ul>
+	        <div class="mui-content-padded">
+				<p>不加动画</p>
+			</div>
+		    <ul class="mui-table-view">
+	            <li class="mui-table-view-cell" style="background-color: #000000;color: white;">
+		            <a class="mui-navigate-right">
+		                 Item 3<span class="mui-good-redPoint-noanimate mui-pull-right" style="margin-right: 22px;margin-top: 5px;"></span>
+		            </a>
+		        </li>
+	        </ul>
+	        <div class="mui-content-padded">
+				<p>头像(颜色改变)</p>
+			</div>
+			<div class="mui-row">
+				<div class="mui-col-xs-3">
+					<img style="border-radius: 50%;width: 45px;" src="../images/logo.png"/>
+			    	<span class="mui-good-redPoint-noanimate" style="margin-left: -15px;"></span>
+				</div>
+				<div class="mui-col-xs-3">
+					<img style="border-radius: 50%;width: 45px;" src="../images/logo.png"/>
+			    	<span class="mui-good-redPoint-noanimate" style="margin-left: -15px;background-color: orange;"></span>
+				</div>
+				<div class="mui-col-xs-3">
+					<img style="border-radius: 50%;width: 45px;" src="../images/logo.png"/>
+			    	<span class="mui-good-redPoint-noanimate" style="margin-left: -15px;background-color: red;"></span>
+				</div>
+			    <div class="mui-col-xs-3">
+					<img style="border-radius: 50%;width: 45px;" src="../images/logo.png"/>
+			    	<span class="mui-good-redPoint-noanimate" style="margin-left: -15px;background-color: gray;"></span>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>
