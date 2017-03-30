@@ -199,7 +199,9 @@
 					"css/mui.min.css",
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"js/mdui.js"
 				],
 				"refer": [
 					"example/touchFeel.html",
@@ -210,7 +212,8 @@
 					"example/loading.html",
 					"example/shange.html",
 					"example/topMsg.html",
-					"example/input.html"
+					"example/input.html",
+					"example/typography.html"
 				],
 				"priority": 0
 			},
@@ -303,7 +306,18 @@
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/typography.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"js/mui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css"
 				],
 				"refer": [],
 				"priority": 0
