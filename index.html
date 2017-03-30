@@ -5,73 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>goodMui</title>
-    <link href="css/mui.min.css" rel="stylesheet"/>
+    <title>Mgui</title>
+    <link rel="stylesheet" type="text/css" href="css/mdui.css"/>
+    <style type="text/css">
+    	body{
+    		font-family: "microsoft yahei";
+    	}
+    </style>
 </head>
-<body>
-	<header class="mui-bar mui-bar-nav">
-	    <h1 class="mui-title">首页</h1>
+<body class="mdui-drawer-body-left">
+	<!-- 默认抽屉栏在左侧 -->
+  	<div class="mdui-drawer" id="left-drawer">
+		... drawer content ...
+	</div>
+	<header class="mdui-toolbar">
+		<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+		<span class="mdui-typo-title">开始</span>
+		<div class="mdui-toolbar-spacer"></div>
+		<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+		<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d5;</i></a>
+		<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d4;</i></a>
 	</header>
-	<div class="mui-content">
-	    <ul class="mui-table-view mui-table-view-chevron" style="margin-top: 0px;">
-            <li class="mui-table-view-cell" data-href="example/touchFeel.html">
-                <a class="mui-navigate-right">
-                	触摸反馈
-                </a>
-            </li>
-            <li class="mui-table-view-cell" data-href="example/floatingMenu.html">
-                <a class="mui-navigate-right">
-                	悬浮菜单
-                </a>
-            </li>
-            <li class="mui-table-view-cell" data-href="example/goodModal.html">
-                <a class="mui-navigate-right">
-                	模态框
-                </a>
-            </li>
-            <li class="mui-table-view-cell" data-href="example/loading.html">
-                <a class="mui-navigate-right">
-                	加载过渡
-                </a>
-            </li>
-            <li class="mui-table-view-cell" data-href="example/redPoint.html">
-                <a class="mui-navigate-right">
-                	小红点 
-                </a>
-            </li>
-            <li class="mui-table-view-cell" data-href="example/shoufengqin.html">
-                <a class="mui-navigate-right">
-                	手风琴 
-                </a>
-            </li>
-            <li class="mui-table-view-cell" data-href="example/topMsg.html">
-                <a class="mui-navigate-right">
-                	顶部通知 
-                </a>
-            </li>
-            <li class="mui-table-view-cell" data-href="example/singleColor.html">
-                <a class="mui-navigate-right">
-                	单色图标 
-                </a>
-            </li>
-            <li class="mui-table-view-cell" data-href="example/moreColor.html">
-                <a class="mui-navigate-right">
-                	多色图标 
-                </a>
-            </li>
-        </ul>
+	
+	<div class="mdui-container-fluid">
+		
+		<div class="mdui-panel mdui-panel-gapless" mdui-panel>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">基础</div>
+				<div class="mdui-panel-item-body mdui-panel-item-open">
+					<ul class="mdui-list">
+						<li class="mdui-list-item mdui-ripple" data-href="example/loading.html">排版</li>
+						<div class="mdui-divider"></div>
+						<li class="mdui-list-item mdui-ripple" data-href="example/input.html">输入框</li>
+						<div class="mdui-divider"></div>
+					</ul>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">组件</div>
+				<div class="mdui-panel-item-body">
+					<ul class="mdui-list">
+						<li class="mdui-list-item mdui-ripple" data-href="example/loading.html">加载过渡</li>
+						<div class="mdui-divider"></div>
+						<li class="mdui-list-item mdui-ripple" data-href="example/redPoint.html">小红点</li>
+						<div class="mdui-divider"></div>
+						<li class="mdui-list-item mdui-ripple" data-href="example/singleColor.html">单色图标</li>
+						<div class="mdui-divider"></div>
+						<li class="mdui-list-item mdui-ripple" data-href="example/moreColor.html">多色图标</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+		
 	</div>
 	<script src="js/mui.min.js"></script>
+	<script src="js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
       	mui.init();
-      	mui('.mui-table-view-cell').each(function(){
+      	mui('.mdui-list-item').each(function(){
       		this.addEventListener('tap',function(){
       			var gohref = this.getAttribute('data-href');
       			var styles = {
       				show:{
 				      autoShow:true,//页面loaded事件发生后自动显示，默认为true
 				      aniShow:'pop-in',//页面显示动画，默认为”slide-in-right“；
-				      duration:250//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				      duration:250,//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				      event:'loaded'
 				    },
 					waiting:{
 				      autoShow:false,//自动显示等待框，默认为true
