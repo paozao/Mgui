@@ -216,7 +216,9 @@
 					"example/typography.html",
 					"example/bottom.html",
 					"example/selection.html",
-					"example/tab.html"
+					"example/tab.html",
+					"example/snackbar.html",
+					"example/progress.html"
 				],
 				"priority": 0
 			},
@@ -352,6 +354,23 @@
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
 					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/snackbar.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
+					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/progress.html": {
+				"resources": [
+					"js/mdui.min.js"
 				],
 				"refer": [],
 				"priority": 0

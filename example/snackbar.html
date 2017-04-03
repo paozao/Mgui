@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>底部提示框</title>
+		<link rel="stylesheet" type="text/css" href="../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar mdui-theme-primary-blue mdui-theme-accent-blue">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">底部提示框</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<h3 class="mdui-text-color-theme-accent">Snackbar</h3>
+			<p>Snackbar 会在窗口下方出现一个小的弹出框，它们可以在超时或用户触摸屏幕其他地方后自动消失。 屏幕上最多只能同时显示一个 Snackbar，如果在 Snackbar 还未关闭时就打开下一个 Snackbar，则下一个 Snackbar 会被加入队列，等当前 Snackbar 关闭后再打开。</p>
+
+			<p class="mdui-text-color-theme-accent">普通 Snackbar</p>
+			<button id="demo" class="mdui-btn mdui-color-theme">点击我</button>
+
+			<p class="mdui-text-color-theme-accent">带回调的 Snackbar</p>
+			<button id="demo2" class="mdui-btn mdui-color-theme">点击我</button>
+		</div>
+
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			document.getElementById("demo").addEventListener('tap', function() {
+				mdui.snackbar({
+					message: 'Message sent'
+				});
+			});
+			document.getElementById("demo2").addEventListener('tap', function() {
+				mdui.snackbar({
+					message: 'Archived',
+					buttonText: 'undo',
+					onClick: function() {
+						mdui.alert('点击了 Sanckbar');
+					},
+					onButtonClick: function() {
+						mdui.alert('点击了按钮');
+					},
+					onClose: function() {
+						mdui.alert('关闭了');
+					}
+				});
+			})
+		</script>
+	</body>
+
+</html>
