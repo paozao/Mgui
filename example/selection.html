@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>选择控制器</title>
+		<link rel="stylesheet" type="text/css" href="../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar mdui-theme-primary-blue">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-blue">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">选择控制器</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<p>复选框</p>
+			<form>
+				<label class="mdui-checkbox">
+				  <input type="checkbox"/>
+				  <i class="mdui-checkbox-icon"></i>
+				  默认不选中
+				</label>
+
+				<label class="mdui-checkbox">
+				  <input type="checkbox" checked/>
+				  <i class="mdui-checkbox-icon"></i>
+				  默认选中
+				</label>
+
+				<label class="mdui-checkbox">
+				  <input type="checkbox" disabled/>
+				  <i class="mdui-checkbox-icon"></i>
+				  禁用，且不选中
+				</label>
+
+				<label class="mdui-checkbox">
+				  <input type="checkbox" disabled checked/>
+				  <i class="mdui-checkbox-icon"></i>
+				  禁用，且选中
+				</label>
+			</form>
+
+			<p>单选框</p>
+			<form>
+
+				<label class="mdui-radio">
+			    <input type="radio" name="group1"/>
+			    <i class="mdui-radio-icon"></i>
+			    默认不选中
+			  </label>
+
+				<label class="mdui-radio">
+			    <input type="radio" name="group1" checked/>
+			    <i class="mdui-radio-icon"></i>
+			    默认选中
+			  </label>
+
+				<label class="mdui-radio">
+			    <input type="radio" name="group1" disabled/>
+			    <i class="mdui-radio-icon"></i>
+			    禁用，且不选中
+			  </label>
+
+			</form>
+
+			<form>
+				<label class="mdui-radio">
+			    <input type="radio" name="group1" disabled checked/>
+			    <i class="mdui-radio-icon"></i>
+			    禁用，且选中
+			  </label>
+			</form>
+
+			<p>开关</p>
+			<form>
+				<label class="mdui-switch">
+				  <input type="checkbox"/>
+				  <i class="mdui-switch-icon"></i>
+				</label>
+
+				<label class="mdui-switch">
+				  <input type="checkbox" checked/>
+				  <i class="mdui-switch-icon"></i>
+				</label>
+			</form>
+			<form>
+				<label class="mdui-switch">
+				  <input type="checkbox" disabled/>
+				  <i class="mdui-switch-icon"></i>
+				</label>
+
+				<label class="mdui-switch">
+				  <input type="checkbox" disabled checked/>
+				  <i class="mdui-switch-icon"></i>
+				</label>
+			</form>
+
+		</div>
+
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

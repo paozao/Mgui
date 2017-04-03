@@ -213,7 +213,10 @@
 					"example/shange.html",
 					"example/topMsg.html",
 					"example/input.html",
-					"example/typography.html"
+					"example/typography.html",
+					"example/bottom.html",
+					"example/selection.html",
+					"example/tab.html"
 				],
 				"priority": 0
 			},
@@ -317,6 +320,37 @@
 					"js/mdui.min.js",
 					"js/mui.min.js",
 					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"icons/material-icons/MaterialIcons-Regular.woff"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/bottom.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
+					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/selection.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
+					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/tab.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
 					"css/mdui.css"
 				],
 				"refer": [],

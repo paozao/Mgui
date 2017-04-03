@@ -13,33 +13,51 @@
 		</style>
 	</head>
 
-	<body class="mdui-appbar-with-toolbar mdui-bottom-nav-fixed">
-		<header class="mdui-appbar mdui-appbar-fixed mdui-color-blue">
+	<body class="mdui-appbar-with-toolbar mdui-bottom-nav-fixed mdui-theme-primary-blue">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
 			<div class="mdui-toolbar">
-				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">arrow_back</i></a>
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
 				<span class="mdui-typo-title">模板</span>
 				<div class="mdui-toolbar-spacer"></div>
 			</div>
 		</header>
 		<div class="mdui-container">
-			<div class="mdui-bottom-nav mdui-bottom-nav-scroll-hide mdui-color-blue">
-				<a href="javascript:;" class="mdui-ripple mdui-bottom-nav-active">
+			<div id="example1-tab1" class="mdui-p-a-2">content 1</div>
+			<div id="example1-tab2" class="mdui-p-a-2">content 2</div>
+			<div id="example1-tab3" class="mdui-p-a-2">content 3</div>
+			
+			<div class="mdui-tab mdui-bottom-nav mdui-color-theme" mdui-tab>
+			  <a href="#example1-tab1" class="mdui-ripple">
+			    <i class="mdui-icon material-icons">&#xe0cd;</i>
+			    <label>recents</label>
+			  </a>
+			  <a href="#example1-tab2" class="mdui-ripple">
+			    <i class="mdui-icon material-icons">&#xe87d;</i>
+			    <label>favorites</label>
+			  </a>
+			  <a href="#example1-tab3" class="mdui-ripple">
+			    <i class="mdui-icon material-icons">&#xe8a3;</i>
+			    <label>nearby</label>
+			  </a>
+			</div>
+			<div class="mdui-bottom-nav mdui-color-theme mdui-tab" mdui-tab>
+				<a href="#example1-tab1"  class="mdui-ripple mdui-bottom-nav-active">
 					<i class="mdui-icon material-icons">&#xe889;</i>
 					<label>最近</label>
 				</a>
-				<a href="javascript:;" class="mdui-ripple">
+				<a href="#example1-tab2" class="mdui-ripple">
 					<i class="mdui-icon material-icons">&#xe87d;</i>
 					<label>喜欢</label>
 				</a>
-				<a href="javascript:;" class="mdui-ripple">
+				<a href="#example1-tab3" class="mdui-ripple">
 					<i class="mdui-icon material-icons">&#xe0c8;</i>
 					<label>附近</label>
 				</a>
 			</div>
 		</div>
-
-		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		
 	</body>
 
 </html>
