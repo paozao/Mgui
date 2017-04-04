@@ -15,18 +15,81 @@
 		</style>
 	</head>
 
-	<body class="mdui-drawer-body-left">
+	<body class="mdui-drawer-body-left mdui-theme-primary-blue mdui-theme-accent-deep-purple" data-theme='blue'>
 		<!-- 默认抽屉栏在左侧 -->
 		<div class="mdui-drawer" id="left-drawer">
 			... drawer content ...
 		</div>
-		<header class="mdui-toolbar mdui-color-blue">
+		<header class="mdui-toolbar mdui-color-theme">
 			<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
 			<span class="mdui-typo-title">开始</span>
 			<div class="mdui-toolbar-spacer"></div>
-			<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
-			<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d5;</i></a>
-			<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d4;</i></a>
+			<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#colorChoose'}"><i class="mdui-icon material-icons">&#xe3b7;</i></a>
+			<div class="mdui-dialog" id="colorChoose">
+				<div class="mdui-dialog-title">主题颜色选择</div>
+				<div class="mdui-dialog-content">
+					<form>
+					<div class="mdui-list">
+					  <label class="mdui-list-item mdui-ripple mdui-radio">
+					  	<div class="mdui-checkbox">
+					      	<input type="radio" name="color" checked value="blue"/>
+						    <i class="mdui-radio-icon"></i>
+					   </div>
+					    <div class="mdui-list-item-content mdui-text-color-blue">blue</div>
+					  </label>
+					</div>
+					<div class="mdui-list">
+					  <label class="mdui-list-item mdui-ripple mdui-radio">
+					  	<div class="mdui-checkbox">
+					      	<input type="radio" name="color" value="orange"/>
+						    <i class="mdui-radio-icon"></i>
+					   </div>
+					    <div class="mdui-list-item-content mdui-text-color-orange">orange</div>
+					  </label>
+					</div>
+					<div class="mdui-list">
+					  <label class="mdui-list-item mdui-ripple mdui-radio">
+					  	<div class="mdui-checkbox">
+					      	<input type="radio" name="color" value="red"/>
+						    <i class="mdui-radio-icon"></i>
+					   </div>
+					    <div class="mdui-list-item-content mdui-text-color-red">red</div>
+					  </label>
+					</div>
+					<div class="mdui-list">
+					  <label class="mdui-list-item mdui-ripple mdui-radio">
+					  	<div class="mdui-checkbox">
+					      	<input type="radio" name="color" value="yellow"/>
+						    <i class="mdui-radio-icon"></i>
+					   </div>
+					    <div class="mdui-list-item-content mdui-text-color-yellow">yellow</div>
+					  </label>
+					</div>
+					</form>
+				</div>
+				<div class="mdui-dialog-actions">
+					<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>确认</button>
+					<button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+				</div>
+			</div>
+			<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#more'}"><i class="mdui-icon material-icons">&#xe5d4;</i></a>
+			<ul class="mdui-menu" id="more">
+				<li class="mdui-menu-item">
+					<a id="night" href="javascript:;" class="mdui-ripple">
+						<i class="mdui-menu-item-icon mdui-icon material-icons">&#xe3a8;</i><span>夜晚模式</span>
+					</a>
+				</li>
+				<li class="mdui-menu-item" disabled>
+					<a href="javascript:;">Help & feedback</a>
+				</li>
+				<li class="mdui-menu-item">
+					<a href="javascript:;" class="mdui-ripple">Settings</a>
+				</li>
+				<li class="mdui-divider"></li>
+				<li class="mdui-menu-item">
+					<a href="javascript:;" class="mdui-ripple">Sign out</a>
+				</li>
+			</ul>
 		</header>
 
 		<div class="mdui-container-fluid">
@@ -87,11 +150,34 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/mdui.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
+			function hasClass(ele, cls) {
+				cls = cls || '';
+				if(cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
+				return new RegExp(' ' + cls + ' ').test(' ' + ele.className + ' ');
+			}
+
+			function addClass(ele, cls) {
+				if(!hasClass(ele, cls)) {
+					ele.className = ele.className == '' ? cls : ele.className + ' ' + cls;
+				}
+			}
+
+			function removeClass(ele, cls) {
+				if(hasClass(ele, cls)) {
+					var newClass = ' ' + ele.className.replace(/[\t\r\n]/g, '') + ' ';
+					while(newClass.indexOf(' ' + cls + ' ') >= 0) {
+						newClass = newClass.replace(' ' + cls + ' ', ' ');
+					}
+					ele.className = newClass.replace(/^\s+|\s+$/g, '');
+				}
+			}
+
 			mui.init();
 			//去掉页面滚动条
 			/*plus.webview.currentWebview().setStyle({
 			scrollIndicator: 'none'
-		});*/
+			});*/
+			//点击列表的通用方法
 			mui('.mdui-collapse-item-body .mdui-list-item').each(function() {
 				this.addEventListener('tap', function() {
 					var gohref = this.getAttribute('data-href');
@@ -105,10 +191,42 @@
 							autoShow: false, //自动显示等待框，默认为true
 						},
 						hardwareAccelerated: true,
-						scrollIndicator: 'none' //默认不开滚动条
+						scrollIndicator: 'none' ,//默认不开滚动条
 					}
-					var openWindows = mui.openWindow(gohref, gohref, styles);
+					console.log(styles.hardwareAccelerated);
+					var openWindows = mui.openWindow(gohref,gohref,styles);
 				});
+			})
+
+			//开启夜晚模式
+			document.getElementById("more").addEventListener('closed.mdui.menu', function() {
+				var isNight = hasClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+				if(isNight == false) {
+					addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+					document.querySelector('#night i').innerHTML = '&#xe3a6;'; //白天模式
+					document.querySelector('#night span').innerText = '白天模式';
+				} else {
+					removeClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+					document.querySelector('#night i').innerHTML = '&#xe3a8;'; //夜晚模式
+					document.querySelector('#night span').innerText = '夜晚模式';
+				}
+			});
+			
+			//主题颜色选择
+			document.getElementById("colorChoose").addEventListener('confirm.mdui.dialog',function(e){
+			    var radio = document.getElementsByName("color");  
+			    var colorValue = '';
+			    for (i=0; i<radio.length; i++) {  
+			        if (radio[i].checked) {  
+			            colorValue = radio[i].value ;
+			        }  
+			    }
+				var nowTheme = document.querySelector('body').getAttribute('data-theme');
+				if(nowTheme !== colorValue){
+					removeClass(document.querySelector('body'),'mdui-theme-primary-'+nowTheme);
+					addClass(document.querySelector('body'),'mdui-theme-primary-'+colorValue);
+					document.querySelector('body').setAttribute('data-theme',colorValue);
+				}
 			})
 		</script>
 	</body>
