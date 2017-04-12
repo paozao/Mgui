@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">模板</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<p>默认</p>
+			<div class="mdui-table-fluid">
+				<table class="mdui-table mdui-table-hoverable">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Larry the Bird</td>
+							<td></td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>列选择</p>
+			<div class="mdui-table-fluid">
+				<table class="mdui-table mdui-table-selectable">
+					<thead>
+						<tr>
+							<th>Dessert (100g serving)</th>
+							<th class="mdui-table-col-numeric" mdui-tooltip="{content: 'The total amount of food energy in the given serving size.'}">Calories</th>
+							<th class="mdui-table-col-numeric">Fat (g)</th>
+							<th class="mdui-table-col-numeric">Carbs (g)</th>
+							<th class="mdui-table-col-numeric">Protein (g)</th>
+							<th class="mdui-table-col-numeric">Sodium (mg)</th>
+							<th class="mdui-table-col-numeric" mdui-tooltip="{content: 'The amount of calcium as a percentage of the recommended daily amount.'}">Calclum (%)</th>
+							<th class="mdui-table-col-numeric">Lron (%)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="mdui-table-row-selected">
+							<td>Frozen yogurt</td>
+							<td>159</td>
+							<td>6.0</td>
+							<td>24</td>
+							<td>4.0</td>
+							<td>87</td>
+							<td>14%</td>
+							<td>1%</td>
+						</tr>
+						<tr>
+							<td>Ice cream sandwich</td>
+							<td>237</td>
+							<td>9.0</td>
+							<td>37</td>
+							<td>4.3</td>
+							<td>129</td>
+							<td>8%</td>
+							<td>1%</td>
+						</tr>
+						<tr>
+							<td>Eclair</td>
+							<td>262</td>
+							<td>16.0</td>
+							<td>24</td>
+							<td>6.0</td>
+							<td>337</td>
+							<td>6%</td>
+							<td>7%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<br /><br />
+			<div class="mdui-typo">
+				<h2 class="doc-chapter-title mdui-text-color-theme">动态生成的表格 <a class="doc-anchor" id="dynamic"></a></h2>
+				<p>如果你的表格是动态生成的，或者动态修改了表格属性，则需要调用 <code>mdui.updateTables()</code> 方法来重新初始化表格。</p>
+				<p>该方法可以接受一个含 <code>&lt;table class="mdui-table"&gt;</code> 元素的 CSS 选择器、或者 DOM 元素、或者 DOM 元素组成的数组作为参数，表示只重新初始化指定的表格。如果没有传入参数，则将重新初始化页面中所有的表格。</p>
+			</div>
+
+		</div>
+
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+		</script>
+	</body>
+
+</html>

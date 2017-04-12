@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -21,106 +22,202 @@
 			</div>
 		</header>
 		<div class="mdui-container">
-			<div class="mdui-row">
+			<div class="doc-chapter">
 				<div class="mdui-typo">
-					<blockquote>
-						<div class="mdui-typo-subheading">单行文本框</div>
-					</blockquote>
+					<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
 				</div>
-				<div class="mdui-textfield">
-					<input class="mdui-textfield-input" type="text" placeholder="User Name" />
-				</div>
-			</div>
-			<div class="mdui-row">
+
 				<div class="mdui-typo">
-					<blockquote>
-						<div class="mdui-typo-subheading">固定标签</div>
-					</blockquote>
+					<h4 class="doc-article-title">单行文本框 <a class="doc-anchor" id="basic"></a></h4>
+					<p>这是一个最简单的文本框的例子：</p>
 				</div>
-				<div class="mdui-textfield">
-					<label class="mdui-textfield-label">User Name</label>
-					<input class="mdui-textfield-input" type="text" />
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-textfield">
+							<input class="mdui-textfield-input" type="text" placeholder="User Name">
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="mdui-row">
+
 				<div class="mdui-typo">
-					<blockquote>
-						<div class="mdui-typo-subheading">浮动文本框</div>
-					</blockquote>
+					<h4 class="doc-article-title">固定标签 <a class="doc-anchor" id="fixed-label"></a></h4>
 				</div>
-				<div class="mdui-textfield mdui-textfield-floating-label">
-					<label class="mdui-textfield-label">Email</label>
-					<input class="mdui-textfield-input" type="email" />
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-textfield">
+							<label class="mdui-textfield-label">User Name</label>
+							<input class="mdui-textfield-input" type="text">
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="mdui-row">
+
 				<div class="mdui-typo">
-					<blockquote>
-						<div class="mdui-typo-subheading">禁用状态</div>
-					</blockquote>
+					<h4 class="doc-article-title">浮动标签 <a class="doc-anchor" id="float-label"></a></h4>
 				</div>
-				<div class="mdui-textfield mdui-textfield-floating-label">
-					<label class="mdui-textfield-label">Email</label>
-					<input class="mdui-textfield-input" type="email" disabled="disabled" />
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-textfield mdui-textfield-floating-label">
+							<label class="mdui-textfield-label">Email</label>
+							<input class="mdui-textfield-input" type="email">
+						</div>
+					</div>
 				</div>
-			</div>
-			
-			<div class="mdui-row">
+
 				<div class="mdui-typo">
-					<blockquote>
-						<div class="mdui-typo-subheading">带图标</div>
-					</blockquote>
+					<h4 class="doc-article-title">禁用状态 <a class="doc-anchor" id="disabled"></a></h4>
+					<p>在 <code>.mdui-textfield-input</code> 元素上添加 <code>disabled</code> 属性，即可禁用文本框。</p>
 				</div>
-				<div class="mdui-textfield">
-				  <i class="mdui-icon material-icons">&#xe0be;</i>
-				  <input class="mdui-textfield-input" type="email" placeholder="Email"/>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-textfield mdui-textfield-disabled">
+							<input class="mdui-textfield-input" type="text" disabled="" placeholder="User Name">
+						</div>
+
+						<!-- 固定标签 -->
+						<div class="mdui-textfield mdui-textfield-disabled">
+							<label class="mdui-textfield-label">User Name</label>
+							<input class="mdui-textfield-input" type="text" disabled="">
+						</div>
+
+						<!-- 浮动标签 -->
+						<div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-disabled">
+							<label class="mdui-textfield-label">Email</label>
+							<input class="mdui-textfield-input" type="email" disabled="">
+						</div>
+					</div>
 				</div>
-			</div>
-			
-			<div class="mdui-row">
+
 				<div class="mdui-typo">
-					<blockquote>
-						<div class="mdui-typo-subheading">固定标签</div>
-					</blockquote>
+					<h4 class="doc-article-title">多行文本框 <a class="doc-anchor" id="multiline"></a></h4>
+					<p>把单行文本框的 <code>input</code> 标签替换为 <code>textarea</code> 标签，即为多行文本框。多行文本框会根据内容的高度自动调整文本框的高度。</p>
 				</div>
-			<div class="mdui-textfield">
-			  <i class="mdui-icon material-icons">&#xe853;</i>
-			  <label class="mdui-textfield-label">User name</label>
-			  <input class="mdui-textfield-input" type="text"/>
-			</div>
-			</div>
-			
-			
-			<div class="mdui-row">
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-textfield">
+							<textarea class="mdui-textfield-input" placeholder="Description"></textarea>
+						</div>
+
+						<!-- 固定标签 -->
+						<div class="mdui-textfield">
+							<label class="mdui-textfield-label">Subject</label>
+							<textarea class="mdui-textfield-input"></textarea>
+						</div>
+
+						<!-- 浮动标签 -->
+						<div class="mdui-textfield mdui-textfield-floating-label">
+							<label class="mdui-textfield-label">Message</label>
+							<textarea class="mdui-textfield-input"></textarea>
+						</div>
+
+						<!-- 禁用状态 -->
+						<div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-disabled">
+							<label class="mdui-textfield-label">Disabled</label>
+							<textarea class="mdui-textfield-input" disabled=""></textarea>
+						</div>
+					</div>
+				</div>
+
 				<div class="mdui-typo">
-					<blockquote>
-						<div class="mdui-typo-subheading">浮动标签、多行文本框</div>
-					</blockquote>
+					<h4 class="doc-article-title">含图标 <a class="doc-anchor" id="icon"></a></h4>
 				</div>
-				<div class="mdui-textfield mdui-textfield-floating-label">
-			  <i class="mdui-icon material-icons">&#xe0d8;</i>
-			  <label class="mdui-textfield-label">Message</label>
-			  <textarea class="mdui-textfield-input"></textarea>
-			</div>
-			</div>
-			
-			
-			<div class="mdui-row">
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-textfield">
+							<i class="mdui-icon material-icons">&#xe625;</i>
+							<input class="mdui-textfield-input" type="email" placeholder="Email">
+						</div>
+					</div>
+
+				</div>
+
 				<div class="mdui-typo">
-					<blockquote>
-						<div class="mdui-typo-subheading">禁用状态</div>
-					</blockquote>
+					<h4 class="doc-article-title">可展开文本框 <a class="doc-anchor" id="expandable"></a></h4>
 				</div>
-				<div class="mdui-textfield">
-			  <i class="mdui-icon material-icons">&#xe897;</i>
-			  <input class="mdui-textfield-input" type="text" placeholder="Disabled" disabled/>
-			</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row-xs-1 mdui-row-sm-2">
+							<div class="mdui-col">
+								<div class="mdui-textfield mdui-textfield-expandable">
+									<button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons"></i></button>
+									<input class="mdui-textfield-input" type="text" placeholder="Search">
+									<button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons"></i></button>
+								</div>
+							</div>
+							<div class="mdui-col">
+								<div class="mdui-textfield mdui-textfield-expandable mdui-float-right">
+									<button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons"></i></button>
+									<input class="mdui-textfield-input" type="text" placeholder="Search">
+									<button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h2 class="doc-chapter-title mdui-text-color-theme">功能 <a class="doc-anchor" id="func"></a></h2>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">表单验证 <a class="doc-anchor" id="valid"></a></h4>
+					<p>MDUI 使用 HTML5 进行表单验证，在 <code>&lt;div class="mdui-textfield"&gt;&lt;/div&gt;</code> 内部的最后添加元素 <code>&lt;div class="mdui-textfield-error"&gt;&lt;/div&gt;</code>，可以添加错误信息。</p>
+				</div>
+				<div class="doc-example doc-example-showcode" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-invalid">
+							<label class="mdui-textfield-label">User name</label>
+							<input class="mdui-textfield-input" type="text" required="">
+							<div class="mdui-textfield-error">用户名不能为空</div>
+						</div>
+
+						<div class="mdui-textfield mdui-textfield-floating-label">
+							<label class="mdui-textfield-label">Email</label>
+							<input class="mdui-textfield-input" type="email" required="">
+							<div class="mdui-textfield-error">邮箱格式错误</div>
+						</div>
+
+						<div class="mdui-textfield mdui-textfield-floating-label">
+							<label class="mdui-textfield-label">Password</label>
+							<input class="mdui-textfield-input" type="text" pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$" required="">
+							<div class="mdui-textfield-error">密码至少 6 位，且包含大小写字母</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">字数统计 <a class="doc-anchor" id="counter"></a></h4>
+					<p>在 <code>input</code> 元素上添加属性 <code>maxlength=""</code> 即可限制输入的字符长度，MDUI 会自动添加实时字数统计显示到文本框右下角。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-textfield">
+							<label class="mdui-textfield-label">User name</label>
+							<input class="mdui-textfield-input" type="text" maxlength="20" />
+						</div>
+
+						<div class="mdui-textfield mdui-textfield-floating-label">
+							<label class="mdui-textfield-label">Email</label>
+							<input class="mdui-textfield-input" type="email" maxlength="60" />
+							<div class="mdui-textfield-error">邮箱格式错误</div>
+						</div>
+
+						<div class="mdui-textfield mdui-textfield-floating-label">
+							<label class="mdui-textfield-label">Message</label>
+							<textarea class="mdui-textfield-input" maxlength="140"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">动态生成的文本框 <a class="doc-anchor" id="dynamic"></a></h4>
+					<p>如果你的文本框是动态生成的，或者动态修改了文本框内容，则需要调用 <code>mdui.updateTextFields()</code> 方法来重新初始化文本框。</p>
+					<p>该方法可以接受一个含 <code>.mdui-textfield</code> 类的 CSS 选择器、或者 DOM 元素、或者 DOM 元素组成的数组作为参数，表示只重新初始化指定文本框。如果没有传入参数，将重新初始化页面中的所有文本框。</p>
+				</div>
 			</div>
 		</div>
 
 		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="html5plus://ready"></script>
 	</body>
 
 </html>

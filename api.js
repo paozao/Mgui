@@ -7,11 +7,6 @@
  * 		1.1 -	定义主域名
  * 		1.2 - 	定义窗口打开时动画效果参数
  * 2 - 首页
- * 		2.1 -	获取首页数据
- * 		2.2 - 	获取广告页面数据
- * 		2.3 -	获取用户基本信息数据
- * 		2.4 -	获取首页推荐基金数据
- * 		2.5 - 	获取首页推荐视频数据
  * 
  * 99 - 构建公共方法
  * 		99.1 -	构建远程AJAX路径(POST)
@@ -36,6 +31,22 @@
 	//仅供测试
 	api.sayFuck = function() {
 		console.error('fuck api!!!');
+	}
+	api.init = function() {
+		//初始化主题和强调色
+		if(localStorage.getItem('primary')){
+			api.addClass(document.querySelector('body'), 'mdui-theme-primary-' + localStorage.getItem('primary'));
+		}else{
+			api.addClass(document.querySelector('body'), 'mdui-theme-primary-indigo');
+		}
+		if(localStorage.getItem('accent')){
+			api.addClass(document.querySelector('body'), 'mdui-theme-accent-' + localStorage.getItem('accent'));
+		}else{
+			api.addClass(document.querySelector('body'), 'mdui-theme-accent-pink');
+		}
+		if(localStorage.getItem('layout')){
+			api.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+		}
 	}
 	/*1 - 基础配置*/
 	//1.1定义主域名
@@ -168,4 +179,6 @@
 	api.FAIL = false;
 
 	window.API = api;
+	
+	
 })();

@@ -38,25 +38,22 @@
 						<li class="mdui-list-item mdui-ripple" data-href="example/theme.html">主题</li>
 						<li class="mdui-list-item mdui-ripple" data-href="example/typography.html">排版</li>
 						<li class="mdui-list-item mdui-ripple" data-href="example/input.html">输入框</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/bottom.html">底部导航栏（div）</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/tab.html">Tab选项卡</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/selection.html">选择框</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/snackbar.html">底部提示框</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/progress.html">进度条</li>
+						<li class="mdui-list-item mdui-ripple" data-href="example/table.html">表格</li>
 					</ul>
 				</li>
 
 				<li class="mdui-collapse-item">
 					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
 						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe335;</i>
-						<div class="mdui-list-item-content">Acquisition</div>
+						<div class="mdui-list-item-content">样式</div>
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
 					</div>
 					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-						<li class="mdui-list-item mdui-ripple">Overview</li>
-						<li class="mdui-list-item mdui-ripple">All Traffic</li>
-						<li class="mdui-list-item mdui-ripple">Direct Traffic</li>
-						<li class="mdui-list-item mdui-ripple">Search Overview</li>
+						<li class="mdui-list-item mdui-ripple" data-href="example/bottom.html">底部导航栏（div）</li>
+						<li class="mdui-list-item mdui-ripple" data-href="example/tab.html">Tab选项卡</li>
+						<li class="mdui-list-item mdui-ripple" data-href="example/selection.html">选择框</li>
+						<li class="mdui-list-item mdui-ripple" data-href="example/snackbar.html">底部提示框</li>
+						<li class="mdui-list-item mdui-ripple" data-href="example/progress.html">进度条</li>
 					</ul>
 				</li>
 
@@ -86,18 +83,7 @@
 		<script src="js/mdui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="api.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
-		
-			//初始化主题和强调色
-			if(localStorage.getItem('primary')){
-				API.addClass(document.querySelector('body'), 'mdui-theme-primary-' + localStorage.getItem('primary'));
-			}
-			if(localStorage.getItem('accent')){
-				API.addClass(document.querySelector('body'), 'mdui-theme-accent-' + localStorage.getItem('accent'));
-			}
-			if(localStorage.getItem('layout')){
-				API.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
-			}
-			mui.init();
+			API.init();
 			//去掉页面滚动条
 			/*plus.webview.currentWebview().setStyle({
 			scrollIndicator: 'none'
