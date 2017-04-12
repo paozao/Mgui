@@ -147,16 +147,15 @@
 	}
 	//99.4跳转线上页面方法
 	api.openWeb = function(url,title) {
-		if(title == undefined || title == '' || url == undefined || url == '') {
-			console.error('哥，title和url不能为空啊');
+		if(url == undefined || url == '') {
+			console.error('哥，url不能为空啊');
 			return false;
 		}
 		var newStyles = api.webviewStyles;
 		newStyles.extras = {
-			title: title,
 			url: url
 		};
-		mui.openWindow('windows.html', 'windows.html', newStyles);
+		mui.openWindow('window.html', 'window.html', newStyles);
 	}
 	
 	//99.5查询元素是否有指定类

@@ -35,10 +35,10 @@
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
 					</div>
 					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-						<li class="mdui-list-item mdui-ripple" data-href="example/theme.html">主题</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/typography.html">排版</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/input.html">输入框</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/table.html">表格</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/theme.html">主题</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/typography.html">排版</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/input.html">输入框</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/table.html">表格</li>
 					</ul>
 				</li>
 
@@ -49,33 +49,34 @@
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
 					</div>
 					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-						<li class="mdui-list-item mdui-ripple" data-href="example/bottom.html">底部导航栏（div）</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/tab.html">Tab选项卡</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/selection.html">选择框</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/snackbar.html">底部提示框</li>
-						<li class="mdui-list-item mdui-ripple" data-href="example/progress.html">进度条</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/bottom.html">底部导航栏（div）</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/tab.html">Tab选项卡</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/selection.html">选择框</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/snackbar.html">底部提示框</li>
+						<li class="mdui-list-item mdui-ripple golocal" data-href="example/progress.html">进度条</li>
 					</ul>
 				</li>
 
 				<li class="mdui-collapse-item">
 					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe913;</i>
-						<div class="mdui-list-item-content">Behavior</div>
+						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe86d;</i>
+						<div class="mdui-list-item-content">模板</div>
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
 					</div>
 					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
 						<li class="mdui-list-item mdui-ripple">Overview</li>
-						<li class="mdui-list-item mdui-ripple">All Pages</li>
-						<li class="mdui-list-item mdui-ripple">Landing Pages</li>
-						<li class="mdui-list-item mdui-ripple">Exit Pages</li>
 					</ul>
 				</li>
-
-				<li class="mdui-list-item mdui-ripple">
-					<i class="mdui-list-item-icon mdui-icon material-icons">&#xe8cc;</i>
-					<div class="mdui-list-item-content">Ecommerce</div>
+				<li class="mdui-collapse-item">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe2c0;</i>
+						<div class="mdui-list-item-content">资源</div>
+						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li id="iconWeb" class="mdui-list-item mdui-ripple">图标</li>
+					</ul>
 				</li>
-
 			</ul>
 
 		</div>
@@ -89,11 +90,14 @@
 			scrollIndicator: 'none'
 			});*/
 			//点击列表的通用方法
-			mui('.mdui-collapse-item-body .mdui-list-item').each(function() {
+			mui('.golocal').each(function() {
 				this.addEventListener('tap', function() {
 					var gohref = this.getAttribute('data-href');
-					var openWindows = API.openWindow(gohref,gohref);
+					API.openWindow(gohref,gohref);
 				});
+			})
+			document.getElementById("iconWeb").addEventListener('tap',function(){
+				API.openWeb('http://www.mdui.org/docs/material_icon');
 			})
 		</script>
 	</body>

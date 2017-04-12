@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">线上页面</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+			mui.plusReady(function () {
+			    var ws = plus.webview.currentWebview();
+			    var newUrl = ws.url;
+			    var embed=plus.webview.create(newUrl,'new',{top:'56px',bottom:'0px',hardwareAccelerated:true});
+			    ws.append(embed);
+			})
+		</script>
+	</body>
+
+</html>
