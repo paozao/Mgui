@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+			
+			.doc-color-circle {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a data-href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">主题和颜色</span>
+				<div class="mdui-toolbar-spacer"></div>
+				<a data-href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#themeChoose'}"><i class="mdui-icon material-icons">&#xe3b7;</i></a>
+				<a data-href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#colorChoose'}"><i class="mdui-icon material-icons">&#xe23a;</i></a>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">主色 <a class="doc-anchor" id="color-primary"></a></h4>
+				<p>主色共有 19 种颜色，包括：</p>
+				<div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-red mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-red">red</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-pink mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-pink">pink</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-purple mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-purple">purple</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-deep-purple mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-deep-purple">deep-purple</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-indigo mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-indigo">indigo</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-blue mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-blue">blue</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-light-blue mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-light-blue">light-blue</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-cyan mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-cyan">cyan</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-teal mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-teal">teal</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-green mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-green">green</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-light-green mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-light-green">light-green</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-lime mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-lime">lime</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-yellow mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-yellow">yellow</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-amber mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-amber">amber</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-orange mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-orange">orange</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-deep-orange mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-deep-orange">deep-orange</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-brown mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-brown">brown</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-grey mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-grey">grey</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-blue-grey mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#primary-color-blue-grey">blue-grey</a>
+					</div>
+				</div>
+				<p></p>
+				<p>主色每种颜色都有 10 种饱和度：</p>
+				<div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-50 mdui-m-r-2"></span>50
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-100 mdui-m-r-2"></span>100
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-200 mdui-m-r-2"></span>200
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-300 mdui-m-r-2"></span>300
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-400 mdui-m-r-2"></span>400
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-500 mdui-m-r-2"></span>500
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-600 mdui-m-r-2"></span>600
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-700 mdui-m-r-2"></span>700
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-800 mdui-m-r-2"></span>800
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-900 mdui-m-r-2"></span>900
+					</div>
+				</div>
+			</div>
+
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">强调色 <a class="doc-anchor" id="color-accent"></a></h4>
+				<p>强调色共有 16 种颜色，包括：</p>
+				<div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-red-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-red">red</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-pink-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-pink">pink</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-purple-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-purple">purple</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-deep-purple-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-deep-purple">deep-purple</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-indigo-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-indigo">indigo</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-blue-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-blue">blue</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-light-blue-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-light-blue">light-blue</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-cyan-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-cyan">cyan</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-teal-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-teal">teal</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-green-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-green">green</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-light-green-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-light-green">light-green</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-lime-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-lime">lime</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-yellow-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-yellow">yellow</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-amber-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-amber">amber</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-orange-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-orange">orange</a>
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-deep-orange-accent mdui-m-r-1"></span>
+						<a data-scroll="" data-href="#accent-color-deep-orange">deep-orange</a>
+					</div>
+				</div>
+				<p></p>
+				<p>强调色每种颜色都有 4 中饱和度：</p>
+				<div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-a100 mdui-m-r-2"></span>a100
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-a200 mdui-m-r-2"></span>a200
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-a400 mdui-m-r-2"></span>a400
+					</div>
+					<div class="mdui-col">
+						<span class="doc-color-circle mdui-color-theme-a700 mdui-m-r-2"></span>a700
+					</div>
+				</div>
+			</div>
+
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">主色 <a class="doc-anchor" id="theme-primary"></a></h4>
+				<p>在 body 中添加类 <code>.mdui-theme-primary-<span mdui-tooltip="{content: '颜色名'}">[color]</span></code> 来设置主色。</p>
+				<p>在页面中使用下列类，这些类的颜色会随着 body 中的主题颜色的变化而变化：</p>
+				<ul>
+					<li><code>.mdui-color-theme</code></li>
+					<li><code>.mdui-color-theme-<span mdui-tooltip="{content: '主色的颜色饱和度'}">[degree]</span></code></li>
+					<li><code>.mdui-text-color-theme</code></li>
+					<li><code>.mdui-text-color-theme-<span mdui-tooltip="{content: '主色的颜色饱和度'}">[degree]</span></code></li>
+				</ul>
+			</div>
+
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">强调色 <a class="doc-anchor" id="theme-accent"></a></h4>
+				<p>在 body 中添加类 <code>.mdui-theme-accent-<span mdui-tooltip="{content: '颜色名'}">[color]</span></code> 来设置强调色</p>
+				<p>在页面中使用下列类，这些类的颜色会随着 body 中的主题颜色的变化而变化：</p>
+				<ul>
+					<li><code>.mdui-color-theme-accent</code></li>
+					<li><code>.mdui-color-theme-<span mdui-tooltip="{content: '强调色的颜色饱和度'}">[degree]</span></code></li>
+					<li><code>.mdui-text-color-theme-accent</code></li>
+					<li><code>.mdui-text-color-theme-<span mdui-tooltip="{content: '强调色的颜色饱和度'}">[degree]</span></code></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!--主题选择弹出框-->
+		<div class="mdui-dialog" id="themeChoose">
+			<div class="mdui-dialog-title">主题颜色选择</div>
+			<div class="mdui-dialog-content mdui-dialog-scrollbar" style="height: 391px;">
+
+				<p class="mdui-typo-title">主题色</p>
+				<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+					<div class="mdui-col">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked="">
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+					</div>
+					<div class="mdui-col">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark">
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+					</div>
+				</div>
+
+				<p class="mdui-typo-title mdui-text-color-theme">主色</p>
+				<form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+					<div class="mdui-col mdui-text-color-amber">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber">
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-blue">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue">
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-blue-grey">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey">
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-brown">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown">
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-cyan">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan">
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-deep-orange">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange">
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-deep-purple">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple">
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-green">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green">
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-grey">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey">
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-indigo">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo">
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-light-blue">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue">
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-light-green">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green">
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-lime">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime">
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-orange">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange">
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-pink">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink">
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-purple">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple">
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-red">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red">
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-teal">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal">
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-yellow">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow">
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+					</div>
+				</form>
+			</div>
+			<div class="mdui-dialog-actions">
+				<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>确认</button>
+				<button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+			</div>
+		</div>
+		<div class="mdui-dialog" id="colorChoose">
+			<div class="mdui-dialog-title">强调色选择</div>
+			<div class="mdui-dialog-content mdui-dialog-scrollbar" style="height: 391px;">
+
+				<p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+				<form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+					<div class="mdui-col mdui-text-color-amber">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber">
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-blue">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue">
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-cyan">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan">
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-deep-orange">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange">
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-deep-purple">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple">
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-green">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green">
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-indigo">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo">
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-light-blue">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue">
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-light-green">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green">
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-lime">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime">
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-orange">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange">
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-pink">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink">
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-purple">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple">
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-red">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red">
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-teal">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal">
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+					</div>
+					<div class="mdui-col mdui-text-color-yellow">
+						<label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow">
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+					</div>
+				</form>
+
+			</div>
+			<div class="mdui-dialog-actions">
+				<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>确认</button>
+				<button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+			</div>
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var layout = document.getElementsByName("doc-theme-layout");
+			var accent = document.getElementsByName("doc-theme-accent");
+			var primary = document.getElementsByName("doc-theme-primary");
+			if(localStorage.getItem('primary')){
+				API.addClass(document.querySelector('body'), 'mdui-theme-primary-' + localStorage.getItem('primary'));
+			}
+			if(localStorage.getItem('accent')){
+				API.addClass(document.querySelector('body'), 'mdui-theme-accent-' + localStorage.getItem('accent'));
+			}
+			if(localStorage.getItem('layout')){
+				API.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+			}
+			//主题颜色选择
+			document.getElementById("themeChoose").addEventListener('confirm.mdui.dialog', function(e) {
+				var layout = document.getElementsByName("doc-theme-layout");
+				var primary = document.getElementsByName("doc-theme-primary");
+				for(i = 0; i < layout.length; i++) {
+					if(layout[i].checked) {
+						layout = layout[i].value;
+					}
+				}
+				for(i = 0; i < primary.length; i++) {
+					if(primary[i].checked) {
+						primary = primary[i].value;
+					}
+				}
+				var nowPrimary = localStorage.getItem('primary');
+				if(nowPrimary !== primary) {
+					API.removeClass(document.querySelector('body'), 'mdui-theme-primary-' + nowPrimary);
+					API.addClass(document.querySelector('body'), 'mdui-theme-primary-' + primary);
+					localStorage.setItem('primary', primary);
+				}
+				if(layout == 'dark') {
+					API.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+					localStorage.setItem('layout', layout);
+				} else {
+					API.removeClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+					localStorage.removeItem('layout');
+				}
+			})
+			//强调颜色选择
+			document.getElementById("colorChoose").addEventListener('confirm.mdui.dialog', function(e) {
+				var accent = document.getElementsByName("doc-theme-accent");
+				for(i = 0; i < accent.length; i++) {
+					if(accent[i].checked) {
+						accent = accent[i].value;
+					}
+				}
+				var nowAccent = localStorage.getItem('accent');
+				if(nowAccent !== accent) {
+					API.removeClass(document.querySelector('body'), 'mdui-theme-accent-' + nowAccent);
+					API.addClass(document.querySelector('body'), 'mdui-theme-accent-' + accent);
+					localStorage.setItem('accent', accent);
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -15,7 +15,7 @@
 		</style>
 	</head>
 
-	<body class="mdui-drawer-body-left mdui-theme-primary-blue mdui-theme-accent-deep-purple" data-theme='blue'>
+	<body class="mdui-drawer-body-left">
 		<!-- 默认抽屉栏在左侧 -->
 		<div class="mdui-drawer" id="left-drawer">
 			... drawer content ...
@@ -24,72 +24,6 @@
 			<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
 			<span class="mdui-typo-title">开始</span>
 			<div class="mdui-toolbar-spacer"></div>
-			<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#colorChoose'}"><i class="mdui-icon material-icons">&#xe3b7;</i></a>
-			<div class="mdui-dialog" id="colorChoose">
-				<div class="mdui-dialog-title">主题颜色选择</div>
-				<div class="mdui-dialog-content">
-					<form>
-					<div class="mdui-list">
-					  <label class="mdui-list-item mdui-ripple mdui-radio">
-					  	<div class="mdui-checkbox">
-					      	<input type="radio" name="color" checked value="blue"/>
-						    <i class="mdui-radio-icon"></i>
-					   </div>
-					    <div class="mdui-list-item-content mdui-text-color-blue">blue</div>
-					  </label>
-					</div>
-					<div class="mdui-list">
-					  <label class="mdui-list-item mdui-ripple mdui-radio">
-					  	<div class="mdui-checkbox">
-					      	<input type="radio" name="color" value="orange"/>
-						    <i class="mdui-radio-icon"></i>
-					   </div>
-					    <div class="mdui-list-item-content mdui-text-color-orange">orange</div>
-					  </label>
-					</div>
-					<div class="mdui-list">
-					  <label class="mdui-list-item mdui-ripple mdui-radio">
-					  	<div class="mdui-checkbox">
-					      	<input type="radio" name="color" value="red"/>
-						    <i class="mdui-radio-icon"></i>
-					   </div>
-					    <div class="mdui-list-item-content mdui-text-color-red">red</div>
-					  </label>
-					</div>
-					<div class="mdui-list">
-					  <label class="mdui-list-item mdui-ripple mdui-radio">
-					  	<div class="mdui-checkbox">
-					      	<input type="radio" name="color" value="yellow"/>
-						    <i class="mdui-radio-icon"></i>
-					   </div>
-					    <div class="mdui-list-item-content mdui-text-color-yellow">yellow</div>
-					  </label>
-					</div>
-					</form>
-				</div>
-				<div class="mdui-dialog-actions">
-					<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>确认</button>
-					<button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
-				</div>
-			</div>
-			<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#more'}"><i class="mdui-icon material-icons">&#xe5d4;</i></a>
-			<ul class="mdui-menu" id="more">
-				<li class="mdui-menu-item">
-					<a id="night" href="javascript:;" class="mdui-ripple">
-						<i class="mdui-menu-item-icon mdui-icon material-icons">&#xe3a8;</i><span>夜晚模式</span>
-					</a>
-				</li>
-				<li class="mdui-menu-item" disabled>
-					<a href="javascript:;">Help & feedback</a>
-				</li>
-				<li class="mdui-menu-item">
-					<a href="javascript:;" class="mdui-ripple">Settings</a>
-				</li>
-				<li class="mdui-divider"></li>
-				<li class="mdui-menu-item">
-					<a href="javascript:;" class="mdui-ripple">Sign out</a>
-				</li>
-			</ul>
 		</header>
 
 		<div class="mdui-container-fluid">
@@ -101,6 +35,7 @@
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
 					</div>
 					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li class="mdui-list-item mdui-ripple" data-href="example/theme.html">主题</li>
 						<li class="mdui-list-item mdui-ripple" data-href="example/typography.html">排版</li>
 						<li class="mdui-list-item mdui-ripple" data-href="example/input.html">输入框</li>
 						<li class="mdui-list-item mdui-ripple" data-href="example/bottom.html">底部导航栏（div）</li>
@@ -149,29 +84,19 @@
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/mdui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="api.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
-			function hasClass(ele, cls) {
-				cls = cls || '';
-				if(cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
-				return new RegExp(' ' + cls + ' ').test(' ' + ele.className + ' ');
+		
+			//初始化主题和强调色
+			if(localStorage.getItem('primary')){
+				API.addClass(document.querySelector('body'), 'mdui-theme-primary-' + localStorage.getItem('primary'));
 			}
-
-			function addClass(ele, cls) {
-				if(!hasClass(ele, cls)) {
-					ele.className = ele.className == '' ? cls : ele.className + ' ' + cls;
-				}
+			if(localStorage.getItem('accent')){
+				API.addClass(document.querySelector('body'), 'mdui-theme-accent-' + localStorage.getItem('accent'));
 			}
-
-			function removeClass(ele, cls) {
-				if(hasClass(ele, cls)) {
-					var newClass = ' ' + ele.className.replace(/[\t\r\n]/g, '') + ' ';
-					while(newClass.indexOf(' ' + cls + ' ') >= 0) {
-						newClass = newClass.replace(' ' + cls + ' ', ' ');
-					}
-					ele.className = newClass.replace(/^\s+|\s+$/g, '');
-				}
+			if(localStorage.getItem('layout')){
+				API.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
 			}
-
 			mui.init();
 			//去掉页面滚动条
 			/*plus.webview.currentWebview().setStyle({
@@ -181,52 +106,8 @@
 			mui('.mdui-collapse-item-body .mdui-list-item').each(function() {
 				this.addEventListener('tap', function() {
 					var gohref = this.getAttribute('data-href');
-					var styles = {
-						show: {
-							autoShow: true, //页面loaded事件发生后自动显示，默认为true
-							aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
-							duration: 250, //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
-						},
-						waiting: {
-							autoShow: false, //自动显示等待框，默认为true
-						},
-						hardwareAccelerated: true,
-						scrollIndicator: 'none' ,//默认不开滚动条
-					}
-					console.log(styles.hardwareAccelerated);
-					var openWindows = mui.openWindow(gohref,gohref,styles);
+					var openWindows = API.openWindow(gohref,gohref);
 				});
-			})
-
-			//开启夜晚模式
-			document.getElementById("more").addEventListener('closed.mdui.menu', function() {
-				var isNight = hasClass(document.querySelector('body'), 'mdui-theme-layout-dark');
-				if(isNight == false) {
-					addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
-					document.querySelector('#night i').innerHTML = '&#xe3a6;'; //白天模式
-					document.querySelector('#night span').innerText = '白天模式';
-				} else {
-					removeClass(document.querySelector('body'), 'mdui-theme-layout-dark');
-					document.querySelector('#night i').innerHTML = '&#xe3a8;'; //夜晚模式
-					document.querySelector('#night span').innerText = '夜晚模式';
-				}
-			});
-			
-			//主题颜色选择
-			document.getElementById("colorChoose").addEventListener('confirm.mdui.dialog',function(e){
-			    var radio = document.getElementsByName("color");  
-			    var colorValue = '';
-			    for (i=0; i<radio.length; i++) {  
-			        if (radio[i].checked) {  
-			            colorValue = radio[i].value ;
-			        }  
-			    }
-				var nowTheme = document.querySelector('body').getAttribute('data-theme');
-				if(nowTheme !== colorValue){
-					removeClass(document.querySelector('body'),'mdui-theme-primary-'+nowTheme);
-					addClass(document.querySelector('body'),'mdui-theme-primary-'+colorValue);
-					document.querySelector('body').setAttribute('data-theme',colorValue);
-				}
 			})
 		</script>
 	</body>

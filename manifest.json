@@ -202,7 +202,8 @@
 					"css/mdui.css",
 					"js/mdui.min.js",
 					"icons/material-icons/MaterialIcons-Regular.woff2",
-					"js/mdui.js"
+					"js/mdui.js",
+					"api.js"
 				],
 				"refer": [
 					"example/touchFeel.html",
@@ -219,7 +220,8 @@
 					"example/selection.html",
 					"example/tab.html",
 					"example/snackbar.html",
-					"example/progress.html"
+					"example/progress.html",
+					"example/theme.html"
 				],
 				"priority": 0
 			},
@@ -344,7 +346,8 @@
 					"js/mdui.min.js",
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
-					"css/mdui.css"
+					"css/mdui.css",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -354,7 +357,8 @@
 					"js/mdui.min.js",
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
-					"css/mdui.css"
+					"css/mdui.css",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -364,7 +368,8 @@
 					"js/mdui.min.js",
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
-					"css/mdui.css"
+					"css/mdui.css",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -372,6 +377,18 @@
 			"example/progress.html": {
 				"resources": [
 					"js/mdui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/theme.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
+					"css/mdui.css",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
