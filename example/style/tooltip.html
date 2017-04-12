@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">工具提示</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<div class="doc-chapter">
+				<div class="mdui-typo">
+					<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">调用方式 <a class="doc-anchor" id="call"></a></h2>
+				</div>
+				<div class="mdui-typo">
+					<p>移动端长按显示提示框</p>
+				</div>
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">通过自定义属性调用 <a class="doc-anchor" id="attr"></a></h4>
+					<p>通过该方式无需编写 JavaScript 代码。只需在元素上添加 <code>mdui-tooltip="<a data-scroll="" href="#option">options</a>"</code> 属性即可激活该插件。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row-xs-3">
+							<div class="mdui-col mdui-text-center">
+								<button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '打印'}"><i class="mdui-icon material-icons"></i></button>
+							</div>
+							<div class="mdui-col mdui-text-center">
+								<button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '打印', position: 'top'}"><i class="mdui-icon material-icons"></i></button>
+							</div>
+							<div class="mdui-col mdui-text-center">
+								<button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '打印', delay: 1000}"><i class="mdui-icon material-icons"></i></button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">通过 JavaScript 调用 <a class="doc-anchor" id="js"></a></h4>
+					<p>实例化组件：</p>
+					<pre><code class="lang-js hljs javascript"><span class="hljs-comment">// selector 为 CSS 选择器或 DOM 元素</span>
+<span class="hljs-comment">// options 为配置参数，见下面的参数列表</span>
+<span class="hljs-keyword">var</span> inst = <span class="hljs-keyword">new</span> mdui.Tooltip(selector, options);</code></pre>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+		</script>
+	</body>
+
+</html>

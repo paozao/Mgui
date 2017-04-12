@@ -234,7 +234,8 @@
 					"example/style/snackbar.html",
 					"example/style/tab.html",
 					"example/muban/slideHide.html",
-					"example/muban/contacts.html"
+					"example/muban/contacts.html",
+					"example/style/tooltip.html"
 				],
 				"priority": 0
 			},
@@ -434,7 +435,11 @@
 			},
 			"example/base/theme.html": {
 				"resources": [
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
+					"api.js",
+					"css/mdui.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -539,6 +544,17 @@
 					"images/avatar2.jpg",
 					"images/avatar1.jpg",
 					"images/avatar3.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/tooltip.html": {
+				"resources": [
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
+					"api.js",
+					"css/mdui.css",
+					"js/mdui.min.js"
 				],
 				"refer": [],
 				"priority": 0
