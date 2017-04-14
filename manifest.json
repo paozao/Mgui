@@ -236,7 +236,11 @@
 					"example/style/tab.html",
 					"example/muban/slideHide.html",
 					"example/muban/contacts.html",
-					"example/style/tooltip.html"
+					"example/style/tooltip.html",
+					"example/style/menu.html",
+					"example/style/fab.html",
+					"example/style/chip.html",
+					"example/style/progress.html"
 				],
 				"priority": 0
 			},
@@ -440,7 +444,8 @@
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
 					"api.js",
-					"css/mdui.css"
+					"css/mdui.css",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -451,7 +456,8 @@
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
 					"api.js",
-					"css/mdui.css"
+					"css/mdui.css",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -462,7 +468,8 @@
 					"js/mui.min.js",
 					"api.js",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -473,7 +480,8 @@
 					"js/mui.min.js",
 					"api.js",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -495,7 +503,8 @@
 					"js/mui.min.js",
 					"api.js",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -506,7 +515,8 @@
 					"js/mui.min.js",
 					"api.js",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -534,7 +544,10 @@
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
 					"api.js",
-					"css/mdui.css"
+					"css/mdui.css",
+					"fonts/roboto/Roboto-Regular.woff2",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"fonts/roboto/Roboto-Medium.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -548,7 +561,8 @@
 					"js/mdui.min.js",
 					"images/avatar2.jpg",
 					"images/avatar1.jpg",
-					"images/avatar3.jpg"
+					"images/avatar3.jpg",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -558,6 +572,52 @@
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"js/mui.min.js",
 					"api.js",
+					"css/mdui.css",
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/menu.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/fab.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/chip.html": {
+				"resources": [
+					"js/mui.min.js",
+					"images/avatar1.jpg",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"js/mdui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/progress.html": {
+				"resources": [
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"css/mdui.css",
 					"js/mdui.min.js"
 				],

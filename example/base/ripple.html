@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">涟漪效果</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<div class="doc-chapter">
+				<div class="mdui-typo">
+					<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">使用方法 <a class="doc-anchor" id="use"></a></h2>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">添加涟漪效果 <a class="doc-anchor" id="ripple"></a></h4>
+					<p>只需在元素上添加类 <code>.mdui-ripple</code>，点击元素时就会有涟漪动画效果。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-btn mdui-ripple">button</button>
+						<button class="mdui-btn mdui-ripple mdui-color-blue">button</button>
+					</div>
+					
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">指定涟漪颜色 <a class="doc-anchor" id="color"></a></h4>
+					<p>默认的涟漪为深色背景，当通过 <code>.mdui-color-[color]</code> 指定了背景色、或在深色主题下时，涟漪默认为白色。</p>
+					<p>可通过添加类 <code>.mdui-ripple-[color]</code> 来指定涟漪颜色。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-btn mdui-ripple mdui-ripple-black mdui-color-yellow">black</button>
+						<button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-blue">white</button>
+						<button class="mdui-btn mdui-ripple mdui-ripple-red">red</button>
+						<button class="mdui-btn mdui-ripple mdui-ripple-blue">blue</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+		</script>
+	</body>
+
+</html>

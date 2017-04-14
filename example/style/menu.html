@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">菜单</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<div class="doc-chapter">
+				<div class="mdui-typo">
+					<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">简单菜单 <a class="doc-anchor" id="simple"></a></h4>
+					<p>在菜单项上添加 <code>disabled</code> 属性可以禁用一个菜单项。</p>
+					<p>添加 <code>&lt;li class="mdui-divider"&gt;&lt;/li&gt;</code> 元素可以添加分隔线。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-btn mdui-color-theme-accent" mdui-menu="{target: '#example-1'}">open</button>
+						<ul class="mdui-menu" id="example-1">
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">Refresh</a>
+							</li>
+							<li class="mdui-menu-item" disabled="">
+								<a href="javascript:;">Help &amp; feedback</a>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">Settings</a>
+							</li>
+							<li class="mdui-divider"></li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">Sign out</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">带图标的简单菜单 <a class="doc-anchor" id="simple-icon"></a></h4>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-btn mdui-color-theme-accent" mdui-menu="{target: '#example-2'}">open</button>
+						<ul class="mdui-menu" id="example-2">
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon mdui-icon material-icons"></i>Preview
+								</a>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon mdui-icon material-icons"></i>Download
+								</a>
+							</li>
+							<li class="mdui-divider"></li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon mdui-icon material-icons"></i>Remove
+								</a>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon"></i>Empty
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">级联菜单 <a class="doc-anchor" id="cascade"></a></h4>
+					<p>在 <code>&lt;ul class="mdui-menu"&gt;</code> 元素上添加类 <code>.mdui-menu-cascade</code> 即可使菜单变为适用于桌面设备的级联菜单。</p>
+					<p>通过在 <code>&lt;li class="mdui-menu-item"&gt;&lt;/li&gt;</code> 元素内再添加菜单的方式可以实现菜单的嵌套，理论上可以支持无限级嵌套。</p>
+					<p><code>&lt;span class="mdui-menu-item-helper"&gt;&lt;/span&gt;</code> 元素为菜单项添加简短说明。</p>
+					<p><code>&lt;span class="mdui-menu-item-more"&gt;&lt;/span&gt;</code> 元素为菜单项添加一个向右的箭头，用在含子菜单的菜单项上。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-btn mdui-color-theme-accent" mdui-menu="{target: '#example-3'}">open</button>
+						<ul class="mdui-menu mdui-menu-cascade" id="example-3">
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon mdui-icon material-icons"></i> Bold
+									<span class="mdui-menu-item-helper">Ctrl+B</span>
+								</a>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon mdui-icon material-icons"></i> Italic
+								</a>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon"></i> Superscript
+									<span class="mdui-menu-item-helper">Ctrl+.</span>
+								</a>
+							</li>
+							<li class="mdui-divider"></li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									Paragraph style
+									<span class="mdui-menu-item-more"></span>
+								</a>
+								<ul class="mdui-menu mdui-menu-cascade">
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon"></i>Single
+										</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon mdui-icon material-icons"></i>1.15
+										</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon"></i>Double
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h2 class="doc-chapter-title mdui-text-color-theme">调用方式 <a class="doc-anchor" id="call"></a></h2>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">通过自定义属性调用 <a class="doc-anchor" id="attr"></a></h4>
+					<p>使用该方式无需编写 JavaScript 代码。只需在一个起控制作用的元素<small>（例如：按钮）</small>上添加 <code>mdui-menu="<a data-scroll="" href="#option">options</a>"</code> 属性即可。通过自定义属性调用时，需要额外添加一个 <code>target</code> 参数，用于指定被控制的菜单，它的值为被控制的菜单的 CSS 选择器。</p>
+					<p><strong>注意</strong>：为了使菜单能正确地定位，菜单和触发菜单的元素必须位于同一父元素下的同一级。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-btn mdui-color-theme-accent" mdui-menu="{target: '#example-attr'}">open</button>
+						<ul class="mdui-menu" id="example-attr">
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">Refresh</a>
+							</li>
+							<li class="mdui-menu-item" disabled="">
+								<a href="javascript:;">Help &amp; feedback</a>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">Settings</a>
+							</li>
+							<li class="mdui-divider"></li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">Sign out</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-btn mdui-color-theme-accent" mdui-menu="{target: '#demo-attr-cascade'}">cascade menu</button>
+
+						<ul class="mdui-menu mdui-menu-cascade" id="demo-attr-cascade">
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon mdui-icon material-icons"></i> Bold
+									<span class="mdui-menu-item-helper">Ctrl+B</span>
+								</a>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon mdui-icon material-icons"></i> Italic
+									<span class="mdui-menu-item-helper">Ctrl+I</span>
+								</a>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									<i class="mdui-menu-item-icon"></i> Superscript
+									<span class="mdui-menu-item-helper">Ctrl+.</span>
+								</a>
+							</li>
+							<li class="mdui-divider"></li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									Paragraph style
+									<span class="mdui-menu-item-more"></span>
+								</a>
+								<ul class="mdui-menu mdui-menu-cascade">
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon"></i>Single
+										</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon"></i>1.15
+										</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon"></i>Double
+										</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon mdui-icon material-icons"></i>Custom: 1.2
+										</a>
+									</li>
+									<li class="mdui-divider"></li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">Add space before paragraph</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">Add space after paragraph</a>
+									</li>
+									<li class="mdui-divider"></li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">Custom spacing...</a>
+									</li>
+								</ul>
+							</li>
+							<li class="mdui-menu-item">
+								<a href="javascript:;" class="mdui-ripple">
+									Line spacing
+									<span class="mdui-menu-item-more"></span>
+								</a>
+								<ul class="mdui-menu mdui-menu-cascade">
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon"></i> Single
+										</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon"></i> 1.15
+										</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon"></i> Double
+										</a>
+									</li>
+									<li class="mdui-menu-item">
+										<a href="javascript:;" class="mdui-ripple">
+											<i class="mdui-menu-item-icon mdui-icon material-icons"></i> Custom: 1.2
+											<span class="mdui-menu-item-more"></span>
+										</a>
+										<ul class="mdui-menu mdui-menu-cascade">
+											<li class="mdui-menu-item">
+												<a href="javascript:;" class="mdui-ripple">
+													Line spacing
+													<span class="mdui-menu-item-helper">1.2</span>
+												</a>
+											</li>
+											<li class="mdui-menu-item">
+												<a href="javascript:;" class="mdui-ripple">
+													Paragraph spacing before
+													<span class="mdui-menu-item-helper">1.2</span>
+												</a>
+											</li>
+											<li class="mdui-menu-item">
+												<a href="javascript:;" class="mdui-ripple">
+													Paragraph spacing after
+													<span class="mdui-menu-item-helper">1.5</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">通过 JavaScript 调用 <a class="doc-anchor" id="js"></a></h4>
+					<p>实例化组件：</p>
+					<pre><code class="lang-js hljs javascript"><span class="hljs-comment">// anchorSelector 表示触发菜单的元素的 CSS 选择器或 DOM 元素</span>
+<span class="hljs-comment">// menuSelector 表示菜单的 CSS 选择器或 DOM 元素</span>
+<span class="hljs-comment">// options 表示组件的配置参数，见下面的参数列表</span>
+<span class="hljs-keyword">var</span> inst = <span class="hljs-keyword">new</span> mdui.Menu(anchorSelector, menuSelector, options);</code></pre>
+				</div>
+
+			</div>
+		</div>
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+		</script>
+	</body>
+
+</html>
