@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">悬浮按钮</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<div class="doc-chapter">
+				<div class="mdui-typo">
+					<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">浮动操作按钮 <a class="doc-anchor" id="fab"></a></h4>
+					<p>给元素添加类 <code>.mdui-fab</code> 即可使其成为浮动操作按钮。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-fab mdui-ripple"><i class="mdui-icon material-icons"></i></button>
+						<button class="mdui-fab mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons"></i></button>
+					</div>
+
+				</div>
+
+				<div class="mdui-typo">
+					<p>再添加类 <code>.mdui-fab-mini</code> 可使其变为迷你型浮动操作按钮。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-fab mdui-fab-mini mdui-ripple"><i class="mdui-icon material-icons"></i></button>
+						<button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons"></i></button>
+					</div>
+
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">隐藏/显示动画 <a class="doc-anchor" id="hide"></a></h4>
+					<p>在浮动操作按钮上添加类 <code>.mdui-fab-hide</code> 会以动画的形式隐藏按钮，移除该类后会以动画形式显示按钮。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<button class="mdui-fab mdui-color-theme-accent mdui-ripple" id="fab-animation"><i class="mdui-icon material-icons"></i></button>
+
+						<button class="mdui-btn" id="fab-animation-show">show</button>
+						<button class="mdui-btn" id="fab-animation-hide">hide</button>
+						<script>
+							var fab = document.getElementById('fab-animation');
+							document.getElementById('fab-animation-show').addEventListener('click', function() {
+								fab.classList.remove('mdui-fab-hide');
+							});
+							document.getElementById('fab-animation-hide').addEventListener('click', function() {
+								fab.classList.add('mdui-fab-hide');
+							});
+						</script>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">固定到右下角 <a class="doc-anchor" id="fixed"></a></h4>
+					<p>在浮动操作按钮上添加类 <code>.mdui-fab-fixed</code> 能使按钮固定到窗口右下角。</p>
+				</div>
+
+				<div class="mdui-typo">
+					<h2 class="doc-chapter-title mdui-text-color-theme">弹出菜单 <a class="doc-anchor" id="dial"></a></h2>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">HTML 结构 <a class="doc-anchor" id="html"></a></h4>
+					<p>该按钮始终固定在窗口右下角。在鼠标悬浮或点击时向上弹出快速拨号菜单。</p>
+				</div>
+				<!-- 右下角的实例 -->
+				<div class="mdui-fab-wrapper" mdui-fab="{trigger: 'click'}">
+					<button class="mdui-fab mdui-ripple mdui-color-theme-accent">
+        <!-- 默认显示的图标 -->
+    <i class="mdui-icon material-icons">&#xe145;</i>
+    
+    <!-- 在拨号菜单开始打开时，平滑切换到该图标，若不需要切换图标，则可以省略该元素 -->
+    <i class="mdui-icon mdui-fab-opened material-icons">&#xe254;</i>
+      </button>
+					<div class="mdui-fab-dial">
+						<button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" style="transition-delay: 0ms;"><i class="mdui-icon material-icons"></i></button>
+						<button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" style="transition-delay: 15ms;"><i class="mdui-icon material-icons"></i></button>
+						<button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-orange" style="transition-delay: 30ms;"><i class="mdui-icon material-icons"></i></button>
+						<button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" style="transition-delay: 45ms;"><i class="mdui-icon material-icons"></i></button>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">通过自定义属性调用 <a class="doc-anchor" id="attr"></a></h4>
+					<p>使用该方式无需编写 JavaScript 代码。只需在含 <code>.mdui-fab-wrapper</code> 的元素上添加 <code>mdui-fab="<a data-scroll="" href="#option">options</a>"</code> 即可激活该插件。</p>
+
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">通过 JavaScript 调用 <a class="doc-anchor" id="js"></a></h4>
+					<p>实例化组件：</p>
+					<pre><code class="lang-js hljs javascript"><span class="hljs-comment">// selector 为 CSS 选择器或 DOM 元素或 HTML 字符串</span>
+<span class="hljs-comment">// options 为插件的参数，见下面的参数列表</span>
+<span class="hljs-keyword">var</span> inst = <span class="hljs-keyword">new</span> mdui.Fab(selector, options);</code></pre>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">参数 <a class="doc-anchor" id="option"></a></h4>
+					<div class="mdui-table-fluid">
+						<table class="mdui-table">
+							<thead>
+								<tr>
+									<th>参数名</th>
+									<th>类型</th>
+									<th>默认值</th>
+									<th>描述</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>trigger</code></td>
+									<td><code>string</code></td>
+									<td><code>hover</code></td>
+									<td>触发方式。
+										<ul>
+											<li><code>hover</code>：鼠标悬浮触发。</li>
+											<li><code>click</code>：点击触发。</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">方法 <a class="doc-anchor" id="method"></a></h4>
+					<div class="mdui-table-fluid">
+						<table class="mdui-table">
+							<thead>
+								<tr>
+									<th>方法名</th>
+									<th>描述</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>open()</code></td>
+									<td>打开快速拨号菜单。</td>
+								</tr>
+								<tr>
+									<td><code>close()</code></td>
+									<td>关闭快速拨号菜单。</td>
+								</tr>
+								<tr>
+									<td><code>toggle()</code></td>
+									<td>切换快速拨号菜单的打开状态。</td>
+								</tr>
+								<tr>
+									<td><code>getState()</code></td>
+									<td>返回当前快速拨号菜单的打开状态。共包含四种状态（<code>opening</code>、<code>opened</code>、<code>closing</code>、<code>closed</code>）。</td>
+								</tr>
+								<tr>
+									<td><code>hide()</code></td>
+									<td>以动画的形式隐藏整个浮动操作按钮。</td>
+								</tr>
+								<tr>
+									<td><code>show()</code></td>
+									<td>以动画的形式显示整个浮动操作按钮。</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">事件 <a class="doc-anchor" id="event"></a></h4>
+					<div class="mdui-table-fluid">
+						<table class="mdui-table">
+							<thead>
+								<tr>
+									<th>事件</th>
+									<th>描述</th>
+									<th>目标</th>
+									<th>参数</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>open.mdui.fab</code></td>
+									<td>快速拨号菜单开始打开动画时，事件将被触发。</td>
+									<td rowspan="4"><code>&lt;div class="mdui-fab-wrapper"&gt;</code></td>
+									<td rowspan="4">
+										<code>event.detail.inst</code>：实例
+									</td>
+								</tr>
+								<tr>
+									<td><code>opened.mdui.fab</code></td>
+									<td>快速拨号菜单完成打开动画时，事件将被触发。</td>
+								</tr>
+								<tr>
+									<td><code>close.mdui.fab</code></td>
+									<td>快速拨号菜单开始关闭动画时，事件将被触发。</td>
+								</tr>
+								<tr>
+									<td><code>closed.mdui.fab</code></td>
+									<td>快速拨号菜单完成关闭动画时，事件将被触发。</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+		</script>
+	</body>
+
+</html>
