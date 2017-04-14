@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">卡片视图</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<div class="doc-chapter">
+				<div class="mdui-typo">
+					<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">完整 HTML 结构 <a class="doc-anchor" id="basic"></a></h4>
+					<p>下面是一个卡片的完整 HTML 结构，包含了所有卡片中预定义样式的元素。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row">
+							<div class="mdui-col-sm-6 mdui-col-md-4">
+								<div class="mdui-card">
+									<div class="mdui-card-header">
+										<img class="mdui-card-header-avatar" src="../../images/avatar1.jpg">
+										<div class="mdui-card-header-title">Title</div>
+										<div class="mdui-card-header-subtitle">Subtitle</div>
+									</div>
+									<div class="mdui-card-media">
+										<img src="../../images/card.jpg">
+										<div class="mdui-card-menu">
+											<button class="mdui-btn mdui-btn-icon mdui-text-color-white"><i class="mdui-icon material-icons"></i></button>
+										</div>
+									</div>
+									<div class="mdui-card-primary">
+										<div class="mdui-card-primary-title">Title</div>
+										<div class="mdui-card-primary-subtitle">Subtitle</div>
+									</div>
+									<div class="mdui-card-content">子曰：「学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知，而不愠，不亦君子乎？」</div>
+									<div class="mdui-card-actions">
+										<button class="mdui-btn mdui-ripple">action 1</button>
+										<button class="mdui-btn mdui-ripple">action 2</button>
+										<button class="mdui-btn mdui-btn-icon mdui-float-right"><i class="mdui-icon material-icons"></i></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">覆盖在媒体元素上 <a class="doc-anchor" id="covered"></a></h4>
+					<p>在 <code>&lt;div class="mdui-card-media"&gt;&lt;/div&gt;</code> 中添加 <code>&lt;div class="mdui-card-media-covered"&gt;&lt;/div&gt;</code>，并把需要覆盖在媒体元素上的内容放到该元素中。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row">
+							<div class="mdui-col-sm-6 mdui-col-md-4">
+								<div class="mdui-card">
+									<div class="mdui-card-media">
+										<img src="../../images/card.jpg">
+										<div class="mdui-card-media-covered">
+											<div class="mdui-card-primary">
+												<div class="mdui-card-primary-title">Title</div>
+												<div class="mdui-card-primary-subtitle">Subtitle</div>
+											</div>
+										</div>
+									</div>
+									<div class="mdui-card-actions">
+										<button class="mdui-btn mdui-ripple">action 1</button>
+										<button class="mdui-btn mdui-ripple">action 2</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row">
+							<div class="mdui-col-sm-6 mdui-col-md-4">
+								<div class="mdui-card">
+									<div class="mdui-card-media">
+										<img src="../../images/card.jpg">
+										<div class="mdui-card-media-covered">
+											<div class="mdui-card-primary">
+												<div class="mdui-card-primary-title">Title</div>
+												<div class="mdui-card-primary-subtitle">Subtitle</div>
+											</div>
+											<div class="mdui-card-actions">
+												<button class="mdui-btn mdui-ripple mdui-ripple-white">action 1</button>
+												<button class="mdui-btn mdui-ripple mdui-ripple-white">action 2</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<p>在 <code>.mdui-card-media-covered</code> 上添加类 <code>.mdui-card-media-covered-top</code> 使覆盖层位于媒体元素顶部。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row">
+							<div class="mdui-col-sm-6 mdui-col-md-4">
+								<div class="mdui-card">
+									<div class="mdui-card-media">
+										<img src="../../images/card.jpg">
+										<div class="mdui-card-media-covered mdui-card-media-covered-top">
+											<div class="mdui-card-primary">
+												<div class="mdui-card-primary-title">Title</div>
+												<div class="mdui-card-primary-subtitle">Subtitle</div>
+											</div>
+										</div>
+									</div>
+									<div class="mdui-card-actions">
+										<button class="mdui-btn mdui-ripple">action 1</button>
+										<button class="mdui-btn mdui-ripple">action 2</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<p>在 <code>.mdui-card-media-covered</code> 上添加类 <code>.mdui-card-media-covered-transparent</code> 使覆盖层拥有透明背景。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row">
+							<div class="mdui-col-sm-6 mdui-col-md-4">
+								<div class="mdui-card">
+									<div class="mdui-card-media">
+										<img src="../../images/card.jpg">
+										<div class="mdui-card-media-covered mdui-card-media-covered-transparent">
+											<div class="mdui-card-primary">
+												<div class="mdui-card-primary-title">Title</div>
+												<div class="mdui-card-primary-subtitle">Subtitle</div>
+											</div>
+										</div>
+									</div>
+									<div class="mdui-card-actions">
+										<button class="mdui-btn mdui-ripple">action 1</button>
+										<button class="mdui-btn mdui-ripple">action 2</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<p>在 <code>.mdui-card-media-covered</code> 上添加类 <code>.mdui-card-media-covered-gradient</code> 使覆盖层拥有渐变背景。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row">
+							<div class="mdui-col-sm-6 mdui-col-md-4">
+								<div class="mdui-card">
+									<div class="mdui-card-media">
+										<img src="../../images/card.jpg">
+										<div class="mdui-card-media-covered mdui-card-media-covered-gradient">
+											<div class="mdui-card-primary">
+												<div class="mdui-card-primary-title">Title</div>
+												<div class="mdui-card-primary-subtitle">Subtitle</div>
+											</div>
+										</div>
+									</div>
+									<div class="mdui-card-actions">
+										<button class="mdui-btn mdui-ripple">action 1</button>
+										<button class="mdui-btn mdui-ripple">action 2</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdui-typo">
+					<h4 class="doc-article-title">按钮竖直排列 <a class="doc-anchor" id="stacked"></a></h4>
+					<p>在 <code>&lt;div class="mdui-card-actions"&gt;&lt;/div&gt;</code> 上添加类 <code>.mdui-card-actions-stacked</code>，就能将按钮设置为竖直排列。</p>
+				</div>
+				<div class="doc-example" data-viewsource="">
+					<div class="doc-example-demo">
+						<div class="mdui-row">
+							<div class="mdui-col-sm-6 mdui-col-md-4">
+								<div class="mdui-card">
+									<div class="mdui-card-media">
+										<img src="../../images/card.jpg">
+									</div>
+									<div class="mdui-card-actions mdui-card-actions-stacked">
+										<button class="mdui-btn mdui-ripple">action 1</button>
+										<button class="mdui-btn mdui-ripple">action 2</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+		</script>
+	</body>
+
+</html>

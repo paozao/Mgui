@@ -32,8 +32,8 @@
 	api.sayFuck = function() {
 		console.error('fuck api!!!');
 	}
+	//初始化主题和强调色
 	api.init = function() {
-		//初始化主题和强调色
 		if(localStorage.getItem('primary')){
 			api.addClass(document.querySelector('body'), 'mdui-theme-primary-' + localStorage.getItem('primary'));
 		}else{
