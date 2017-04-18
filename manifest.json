@@ -10,7 +10,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "index2.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -455,7 +455,9 @@
 					"js/mui.min.js",
 					"api.js",
 					"css/mdui.css",
-					"icons/material-icons/MaterialIcons-Regular.woff2"
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"index2.html",
+					"example/base/typography.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -618,6 +620,21 @@
 					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"css/mdui.css",
 					"js/mdui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"index2.html": {
+				"resources": [
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"js/jquery2.1.4.min.js",
+					"js/mdui.js",
+					"example/base/typography.html",
+					"js/jquery.pjax.js",
+					"index2.html"
 				],
 				"refer": [],
 				"priority": 0

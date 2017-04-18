@@ -12,18 +12,32 @@
 			body {
 				font-family: "microsoft yahei";
 			}
+			
+			.slideIn {
+				animation: slideIn 1s ease-in-out;
+				-webkit-animation: slideIn 1s ease-in-out;
+			}
+			
+			@-webkit-keyframes slideIn {
+				from {
+					margin-left: 100%;
+				}
+				to {
+					margin-left: 0%;
+				}
+			}
 		</style>
 	</head>
 
 	<body>
 		<header class="mdui-toolbar mdui-color-theme">
-			<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+			<a data-title="排版" href="example/base/typography.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
 			<span class="mdui-typo-title">开始</span>
 			<div class="mdui-toolbar-spacer"></div>
 		</header>
 
-		<div class="mdui-container-fluid">
-			<ul class="mdui-list" mdui-collapse="{accordion: true}">
+		<div class="mdui-container-fluid" id="pjax-container">
+			<ul class="mdui-list" mdui-collapse="{accordion:true}">
 				<li class="mdui-collapse-item mdui-collapse-item-open">
 					<div class="mdui-collapse-item-header mdui-list-item ">
 						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
@@ -42,7 +56,7 @@
 						<li class="mdui-list-item  golocal" data-href="example/base/ripple.html">涟漪效果</li>
 					</ul>
 				</li>
-				
+
 				<li class="mdui-collapse-item">
 					<div class="mdui-collapse-item-header mdui-list-item ">
 						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe335;</i>
@@ -69,7 +83,7 @@
 						<li class="mdui-list-item  golocal" data-href="example/style/menu.html">菜单</li>
 					</ul>
 				</li>
-				
+
 				<li class="mdui-collapse-item">
 					<div class="mdui-collapse-item-header mdui-list-item ">
 						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe86d;</i>
@@ -81,7 +95,7 @@
 						<li class="mdui-list-item  golocal" data-href="example/muban/slideHide.html">滑动隐藏头部</li>
 					</ul>
 				</li>
-				
+
 				<li class="mdui-collapse-item">
 					<div class="mdui-collapse-item-header mdui-list-item ">
 						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe2c0;</i>
@@ -113,7 +127,25 @@
 					API.openWindow(gohref,gohref);
 				});
 			})*/
-			document.getElementById("iconWeb").addEventListener('tap',function(){
+			if($.support.pjax) {
+				console.log($.support.pjax);
+				$(document).pjax('a', '#pjax-container', {
+					fragment: '#pjax-container',
+					timeout: 5000
+				});
+
+				$(document).on('pjax:send', function() {
+					$("#pjax-container").hide();
+				})
+				$(document).on('pjax:complete', function() {
+					console.log('2');
+					$("#pjax-container").fadeIn(function(){
+						var inst = new mdui.Collapse('.mdui-list');
+					});
+					
+				})
+			}
+			document.getElementById("iconWeb").addEventListener('tap', function() {
 				API.openWeb('http://www.mdui.org/docs/material_icon');
 			})
 		</script>
