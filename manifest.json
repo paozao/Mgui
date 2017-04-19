@@ -641,8 +641,23 @@
 					"example/muban/contacts.html"
 				],
 				"refer": [
-					"example/base/theme.html"
+					"example/base/theme.html",
+					"example/muban/video.html"
 				],
+				"priority": 0
+			},
+			"example/muban/video.html": {
+				"resources": [
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"js/mdui.min.js",
+					"video/demo_mp4.mp4",
+					"images/video_demo.png",
+					"images/card.jpg"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

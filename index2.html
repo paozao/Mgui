@@ -23,24 +23,34 @@
 				margin: auto;
 				display: none;
 			}
-			.mui-action-back{
+			
+			.mui-action-back {
 				display: none;
 			}
 		</style>
 	</head>
 
-	<body>
-		<header class="mdui-toolbar mdui-color-theme">
-			<a href="pjax.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
-			<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
-			<span id="title" class="mdui-typo-title">首页</span>
-			<div class="mdui-toolbar-spacer"></div>
+	<body class="mdui-appbar-with-toolbar">
+		<header class="mdui-appbar mdui-color-theme mdui-appbar-fixed">
+			<div class="mdui-toolbar">
+				<a href="pjax.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span id="title" class="mdui-typo-title">首页</span>
+			</div>
 		</header>
 
 		<div class="mdui-container-fluid" id="pjax-container">
+			<!--<ul class="mui-table-view"> 
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right" href="#">面板1</a>
+		            <div class="mui-collapse-content">
+		                <p>面板1子内容</p>
+		            </div>
+		        </li>
+		    </ul>-->
 			<ul class="mdui-list">
-				<li class="mdui-collapse-item mdui-collapse-item-open">
-					<div class="mdui-collapse-item-header mdui-list-item ">
+				<li class="mdui-collapse-item">
+					<div class="mdui-collapse-item-header mdui-list-item">
 						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
 						<div class="mdui-list-item-content">基础</div>
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
@@ -92,8 +102,11 @@
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
 					</div>
 					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-						<a href="example/muban/contacts.html"><li class="mdui-list-item" data-href="example/muban/contacts.html">列表</li></a>
+						<a href="example/muban/contacts.html">
+							<li class="mdui-list-item" data-href="example/muban/contacts.html">列表</li>
+						</a>
 						<li class="mdui-list-item  golocal" data-href="example/muban/slideHide.html">滑动隐藏头部</li>
+						<li class="mdui-list-item  golocal" data-href="example/muban/video.html">播放器</li>
 					</ul>
 				</li>
 
@@ -128,7 +141,7 @@
 			mui('.golocal').each(function() {
 				this.addEventListener('tap', function() {
 					var gohref = this.getAttribute('data-href');
-					API.openWindow(gohref,gohref);
+					API.openWindow(gohref, gohref);
 				});
 			})
 			if($.support.pjax) {
