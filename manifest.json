@@ -562,7 +562,8 @@
 					"images/avatar2.jpg",
 					"images/avatar1.jpg",
 					"images/avatar3.jpg",
-					"icons/material-icons/MaterialIcons-Regular.woff2"
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"index2.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -634,9 +635,14 @@
 					"js/mdui.js",
 					"example/base/typography.html",
 					"js/jquery.pjax.js",
-					"index2.html"
+					"index2.html",
+					"pjax.html",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"example/muban/contacts.html"
 				],
-				"refer": [],
+				"refer": [
+					"example/base/theme.html"
+				],
 				"priority": 0
 			}
 		},

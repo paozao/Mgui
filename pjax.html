@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>pjax</title>
+		<link rel="stylesheet" type="text/css" href="css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mdui-toolbar mdui-color-theme">
+			<a href="example/base/typography.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+			<span class="mdui-typo-title">pjax</span>
+			<div class="mdui-toolbar-spacer"></div>
+		</header>
+
+		<div class="mdui-container-fluid" id="pjax-container">
+			<p>这是一个pjax页面</p>
+
+		</div>
+		<script src="js/jquery2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.pjax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mdui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			API.init();
+		</script>
+	</body>
+
+</html>
