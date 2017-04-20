@@ -28,6 +28,13 @@
 			.mui-action-back {
 				display: none;
 			}
+			
+			.doc-color-circle {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+			}
 		</style>
 	</head>
 
@@ -57,7 +64,7 @@
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
 					</div>
 					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-						<li class="mdui-list-item  golocal" data-href="example/base/theme.html">主题</li>
+						<a href="example/base/theme.html"><li class="mdui-list-item  golocal" data-href="example/base/theme.html">主题</li></a>
 						<li class="mdui-divider-inset mdui-m-y-0"></li>
 						<li class="mdui-list-item  golocal" data-href="example/base/typography.html">排版</li>
 						<li class="mdui-divider-inset mdui-m-y-0"></li>
@@ -139,12 +146,12 @@
 			scrollIndicator: 'none'
 			});*/
 			//点击列表的通用方法
-			mui('.golocal').each(function() {
+			/*mui('.golocal').each(function() {
 				this.addEventListener('tap', function() {
 					var gohref = this.getAttribute('data-href');
 					API.openWindow(gohref, gohref);
 				});
-			})
+			})*/
 			if($.support.pjax) {
 				var inst = new mdui.Collapse('.mdui-list', {
 					accordion: true
