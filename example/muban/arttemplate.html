@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<script src="../../js/template-web.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">模板引擎</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<div class="mdui-typo">
+				<h4>插件名称：arttemplate</h4>
+				<p>github地址：
+					<a href="https://github.com/aui/art-template">https://github.com/aui/art-template</a>
+				</p>
+				<p>使用场景：art-template 是一个性能出众模板引擎，擅长处理重复、大量的DOM操作，让前端代码变得更容易维护</p>
+			</div>
+			<div class="mdui-typo">
+				<div id="content1">
+
+				</div>
+				<div id="content2">
+
+				</div>
+			</div>
+		</div>
+		<script id="test" type="text/html">
+			<% if (isAdmin) { %>
+
+			<h1><%=title%></h1>
+			<ul>
+				<% for (var i = 0; i < list.length; i ++) { %>
+				<li>索引
+					<%= i + 1 %> ：
+					<%= list[i] %>
+				</li>
+				<% } %>
+			</ul>
+
+			<% } %>
+
+			<p>data:
+				<%=$data%>
+			</p>
+		</script>
+		<script id="list" type="text/html">
+			<h1>include用法</h1>
+			<%include('test')%>
+		</script>
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+			var data = {title: '基本例子',isAdmin: true,list: ['文艺', '博客']};
+			var html = template('test', data);
+			document.getElementById('content1').innerHTML = html;
+			var html = template('list', data);
+			document.getElementById("content2").innerHTML = html;
+		</script>
+	</body>
+
+</html>
