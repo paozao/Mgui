@@ -68,7 +68,7 @@
       self.updateTotalTime();
       self.events();
       self.debug();
-      self.domAudio.volume = 0.05
+      self.domAudio.volume = 1;
     },
 
     play: function()

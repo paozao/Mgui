@@ -10,7 +10,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "index2.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -203,7 +203,9 @@
 					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"js/mdui.js",
 					"api.js",
-					"icons/material-icons/MaterialIcons-Regular.ttf"
+					"icons/material-icons/MaterialIcons-Regular.ttf",
+					"js/jquery2.1.4.min.js",
+					"js/jquery.pjax.js"
 				],
 				"refer": [
 					"example/touchFeel.html",
@@ -238,7 +240,10 @@
 					"example/style/menu.html",
 					"example/style/fab.html",
 					"example/style/chip.html",
-					"example/style/progress.html"
+					"example/style/progress.html",
+					"example/muban/video.html",
+					"example/muban/arttemplate.html",
+					"example/base/ripple.html"
 				],
 				"priority": 0
 			},
@@ -638,7 +643,8 @@
 					"index2.html",
 					"pjax.html",
 					"icons/material-icons/MaterialIcons-Regular.woff",
-					"example/muban/contacts.html"
+					"example/muban/contacts.html",
+					"js/template-web.js"
 				],
 				"refer": [
 					"example/base/theme.html",
@@ -655,7 +661,40 @@
 					"js/mdui.min.js",
 					"video/demo_mp4.mp4",
 					"images/video_demo.png",
-					"images/card.jpg"
+					"images/card.jpg",
+					"js/jaudio.js",
+					"images/thumbs/03.jpg",
+					"css/video.css",
+					"images/thumbs/02.jpg",
+					"images/tracks/01.mp3",
+					"images/thumbs/01.jpg",
+					"js/jquery2.1.4.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"images/tracks/03.mp3",
+					"images/tracks/02.mp3"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/muban/arttemplate.html": {
+				"resources": [
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"js/mdui.min.js",
+					"js/template-web.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/base/ripple.html": {
+				"resources": [
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"js/mdui.min.js"
 				],
 				"refer": [],
 				"priority": 0
