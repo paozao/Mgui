@@ -243,7 +243,8 @@
 					"example/style/progress.html",
 					"example/muban/video.html",
 					"example/muban/arttemplate.html",
-					"example/base/ripple.html"
+					"example/base/ripple.html",
+					"example/muban/canvas.html"
 				],
 				"priority": 0
 			},
@@ -497,7 +498,8 @@
 					"js/mui.min.js",
 					"api.js",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -532,7 +534,8 @@
 					"js/mui.min.js",
 					"api.js",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -644,10 +647,10 @@
 					"pjax.html",
 					"icons/material-icons/MaterialIcons-Regular.woff",
 					"example/muban/contacts.html",
-					"js/template-web.js"
+					"js/template-web.js",
+					"example/base/theme.html"
 				],
 				"refer": [
-					"example/base/theme.html",
 					"example/muban/video.html"
 				],
 				"priority": 0
@@ -695,6 +698,20 @@
 					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"css/mdui.css",
 					"js/mdui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/muban/canvas.html": {
+				"resources": [
+					"example/muban/canvas.js",
+					"fonts/roboto/Roboto-Regular.woff2",
+					"js/mdui.min.js",
+					"fonts/roboto/Roboto-Medium.woff2",
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css"
 				],
 				"refer": [],
 				"priority": 0

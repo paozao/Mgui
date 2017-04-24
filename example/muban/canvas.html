@@ -3,7 +3,9 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>canvas展示</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
 		<style type="text/css">
 			html,
 			body {
@@ -13,9 +15,28 @@
 			}
 		</style>
 	</head>
+
 	<body>
-		<canvas id="canvas"></canvas>
-		<script src="canvas.js" type="text/javascript" charset="utf-8"></script>
+
+		<body class="mdui-appbar-with-toolbar ">
+			<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+				<div class="mdui-toolbar">
+					<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+					<span class="mdui-typo-title">canvas展示</span>
+					<div class="mdui-toolbar-spacer"></div>
+				</div>
+			</header>
+			<canvas id="canvas"></canvas>
+			<script src="canvas.js" type="text/javascript" charset="utf-8"></script>
+
+			<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				API.init();
+			</script>
+		</body>
+
 	</body>
 
 </html>
