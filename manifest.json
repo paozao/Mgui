@@ -247,7 +247,8 @@
 					"example/muban/canvas.html",
 					"example/base/dialog_native.html",
 					"example/style/dialog.html",
-					"example/style/loading.html"
+					"example/style/loading.html",
+					"example/style/downRefresh.html"
 				],
 				"priority": 0
 			},
@@ -746,6 +747,39 @@
 					"css/mdui.min.css",
 					"js/mdui.min.js",
 					"css/loaderskit.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/downRefresh.html": {
+				"resources": [
+					"example/style/downSub.html",
+					"js/mdui.min.js",
+					"js/mui.min.js",
+					"api.js",
+					"css/mdui.css",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/downRefresh/loading-button.js",
+					"js/jquery2.1.4.min.js",
+					"css/downRefresh.css",
+					"js/downRefresh/classie.js",
+					"js/downRefresh/segment.js",
+					"js/downRefresh/demo.js",
+					"js/downRefresh/demo-functions.js",
+					"icons/material-icons/MaterialIcons-Regular.ttf",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/downSub.html": {
+				"resources": [
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"js/mdui.min.js"
 				],
 				"refer": [],
 				"priority": 0

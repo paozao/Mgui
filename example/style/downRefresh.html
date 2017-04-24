@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>下拉刷新</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/downRefresh.css" />
+		<script src="../../js/downRefresh/classie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/downRefresh/segment.js"></script>
+		<script src="../../js/downRefresh/loading-button.js"></script>
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar-fixed">
+			<div class="mdui-toolbar">
+				<div class="showcase main-showcase">
+			        <button class="control-button bordered make-it-fail"></button>
+			        <button class="loading-button circular-loading left"><span id="refreshText"><i class="mdui-icon material-icons">&#xe5db;</i> 下拉刷新</span></button>
+			        <button class="control-button bordered make-it-succeed"></button>
+			    </div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<ul class="mdui-list mdui-list-dense">
+				<li class="mdui-list-item">1</li>
+				<li class="mdui-list-item">2</li>
+				<li class="mdui-list-item">3</li>
+				<li class="mdui-list-item">4</li>
+				<li class="mdui-list-item">5</li>
+			</ul>
+		</div>
+		<script type="text/template" id="circular-loading">
+			<svg width="120px" height="120px">
+				<path class="outer-path" stroke="#333333" d="M 60 60 m 0 -50 a 50 50 0 1 1 0 100 a 50 50 0 1 1 0 -100"></path>
+				<path class="inner-path" stroke="rgba(102,102,102, 0.5)" d="M 60 60 m 0 -30 a 30 30 0 1 1 0 60 a 30 30 0 1 1 0 -60"></path>
+				<path class="success-path" stroke="#333" d="M 60 10 A 50 50 0 0 1 91 21 L 75 45 L 55 75 L 45 65"></path>
+				<path class="error-path" stroke="#333333" d="M 60 10 A 50 50 0 0 1 95 25 L 45 75"></path>
+				<path class="error-path2" stroke="#333333" d="M 60 30 A 30 30 0 0 1 81 81 L 45 45"></path>
+			</svg>
+		</script>
+		<script type="text/template" id="circle-loading">
+			<svg width="120px" height="120px">
+				<circle r="50" cx="60" cy="60" fill="none" stroke="rgba(255, 255, 255, 0.3)"></circle>
+				<circle r="30" cx="60" cy="60" fill="none" stroke="rgba(255, 255, 255, 0.3)"></circle>
+				<path class="outer-path" stroke="#fff" d="M 60 60 m 0 -50 a 50 50 0 1 1 0 100 a 50 50 0 1 1 0 -100"></path>
+				<path class="inner-path" stroke="#fff" d="M 60 60 m 0 -30 a 30 30 0 1 1 0 60 a 30 30 0 1 1 0 -60"></path>
+				<path class="success-path" stroke="#fff" d="M 60 10 A 50 50 0 0 0 16 36  L 45 65 L 55 75 L 75 45"></path>
+				<path class="error-path" stroke="#fff" d="M 60 10 A 50 50 0 0 0 25 95 L 75 45"></path>
+				<path class="error-path2" stroke="#fff" d="M 60 30 A 30 30 0 0 1 81 81 L 45 45"></path>
+			</svg>
+		</script>
+		<script type="text/template" id="infinity-loading">
+			<svg width="120px" height="60px">
+				<path class="infinity-path" stroke="#fff" d="M 30 10 a 20 20 0 1 0 0 40 c 20 0 40 -40 60 -40 a 20 20 0 0 1 0 40 c -20 0 -40 -40 -60 -40"></path>
+				<path class="success-path" stroke="#fff" d="M 30 10 C 15 10 35 25 45 35 L 55 45 L 75 15"></path>
+				<path class="error-path" stroke="#fff" d="M 30 10 a 20 20 0 1 0 0 40 Q 40 50 45 45 L 75 15"></path>
+				<path class="error-path2" stroke="#fff" d="M 30 10 Q 40 10 45 15 L 75 45"></path>
+			</svg>
+		</script>
+		<script src="../../js/jquery2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/downRefresh/demo-functions.js"></script>
+		<script src="../../js/downRefresh/demo.js"></script>
+
+		<script type="text/javascript">
+			mui.init({
+				subpages: [{
+					url: 'downSub.html', //子页面HTML地址，支持本地地址和网络地址
+					id: 'downSub', //子页面标志
+					styles: {
+						top: '0px', //子页面顶部位置
+						height: '56px'
+					}
+				}]
+			});
+			API.init();
+			mui.plusReady(function() {
+				var list = plus.webview.currentWebview();
+				list.addEventListener("dragBounce", onPullStateChange, false);
+				list.setBounce({
+					position: {
+						top: "120px"
+					},
+					changeoffset: {
+						top: "56px"
+					}
+				});
+				// 下拉状态改变
+				function onPullStateChange(e) {
+					switch(e.status) {
+						case "beforeChangeOffset": //下拉可刷新状态
+							console.log('下拉可刷新状态');
+							$("#refreshText").show();
+							$("#refreshText").html('<i class="mdui-icon material-icons">&#xe5db;</i> 下拉可刷新');
+							break;
+						case "afterChangeOffset": //松开可刷新状态
+							console.log('松开可刷新状态');
+							$("#refreshText").html('<i class="mdui-icon material-icons">&#xe863;</i> 松开可刷新');
+							break;
+						case "dragEndAfterChangeOffset": //正在刷新状态
+							console.log('正在刷新状态');
+							$(".loading-button").click();
+							mui.later(function(){
+								$(".make-it-succeed").click();
+								mui.later(function(){
+									
+									console.log('刷新完成');
+									list.resetBounce();
+								},2600);
+								
+							},2000);
+							
+							break;
+						default:
+							break;
+					}
+				}
+
+			})
+		</script>
+	</body>
+
+</html>
