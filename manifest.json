@@ -244,7 +244,10 @@
 					"example/muban/video.html",
 					"example/muban/arttemplate.html",
 					"example/base/ripple.html",
-					"example/muban/canvas.html"
+					"example/muban/canvas.html",
+					"example/base/dialog_native.html",
+					"example/style/dialog.html",
+					"example/style/loading.html"
 				],
 				"priority": 0
 			},
@@ -712,6 +715,37 @@
 					"api.js",
 					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/base/dialog_native.html": {
+				"resources": [
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"js/mdui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/dialog.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/loading.html": {
+				"resources": [
+					"css/mdui.min.css",
+					"js/mdui.min.js",
+					"css/loaderskit.css"
 				],
 				"refer": [],
 				"priority": 0

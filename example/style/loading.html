@@ -6,10 +6,13 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	    <title>加载过渡</title>
-	    <link href="../../css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" type="text/css" href="../../css/mdui.min.css"/>
 	    <link rel="stylesheet" type="text/css" href="../../css/loaderskit.css"/>
 	    <style type="text/css">
-	    	.mui-row{
+	    	body {
+				font-family: "microsoft yahei";
+			}
+	    	.mdui-row{
 	    		margin: 15px 0px;
 	    	}
 			.mui-good-loadbg{
@@ -24,7 +27,7 @@
 			.mui-good-loadbg:last-child{
 			    margin-right: 0px;
 			}
-			.mui-col-xs-4{
+			.mdui-col-xs-4{
 				text-align: center;
 			}
 			.mui-good-load-text{
@@ -35,82 +38,85 @@
 			}
 	    </style>
 	</head>
-	<body>
-		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">加载过渡</h1>
+	<body class="mdui-appbar-with-toolbar ">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">加载过渡</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
 		</header>
-		<div class="mui-content">
-			<div class="mui-content-padded">
+		<div class="mdui-content">
+			<div class="mdui-typo">
 				<p>加文字</p>
 			</div>
-			<div class="mui-row">
-			    <div class="mui-col-xs-4">
+			<div class="mdui-row">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 			    		<div class="timer"></div>
 			    		<p class="mui-good-load-text">加载中</p>
 			    	</div>
 			    </div>
 			</div>
-			<div class="mui-content-padded">
+			<div class="mdui-typo">
 				<p>不加文字</p>
 			</div>
-			<div class="mui-row">
-			    <div class="mui-col-xs-4">
+			<div class="mdui-row">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="typing_loader"></div>
 					</div>
 			    </div>
-			    <div class="mui-col-xs-4">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="cloud"></div>
 					</div>
 			    </div>
-			    <div class="mui-col-xs-4">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="location_indicator"></div>
 					</div>
 			    </div>
 			</div>
-			<div class="mui-row">
-			    <div class="mui-col-xs-4">
+			<div class="mdui-row">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="battery"></div>
 					</div>
 			    </div>
-			    <div class="mui-col-xs-4">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="magnifier"></div>
 					</div>
 			    </div>
-			    <div class="mui-col-xs-4">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="help"></div>
 					</div>
 			    </div>
 			</div>
-			<div class="mui-row">
-			    <div class="mui-col-xs-4">
+			<div class="mdui-row">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="eye"></div>
 					</div>
 			    </div>
-			    <div class="mui-col-xs-4">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="coffee_cup"></div>
 					</div>
 			    </div>
-			    <div class="mui-col-xs-4">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg">
 						<div class="square"></div>
 					</div>
 			    </div>
 			</div>
-			<div class="mui-content-padded">
+			<div class="mdui-typo">
 				<p>换颜色</p>
 			</div>
-			<div class="mui-row">
-			    <div class="mui-col-xs-4">
+			<div class="mdui-row">
+			    <div class="mdui-col-xs-4">
 			    	<div class="mui-good-loadbg" style="background-color: rgba(255,0,0,1);">
 						<div class="circle" style="background-color: rgba(255,255,0,.5);box-shadow: -14px 0px 0px rgba(255,255,0,1);"></div>
 					</div>
@@ -121,5 +127,8 @@
 		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+		</script>
 	</body>
 </html>

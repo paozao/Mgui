@@ -22,23 +22,46 @@
 			</div>
 		</header>
 		<div class="mdui-container">
-			<div class="mdui-typo">
-				<h5>点击按钮弹出对话框</h5>
-				<div class="mdui-divider"></div>
-			</div>
-			<div class="mdui-dialog-content">
-				<button class="mdui-btn mdui-color-pink mdui-ripple" mdui-dialog="{target: '#options'}">button</button>
-				<button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-pink">Button</button>
-			</div>
-			
-			<div class="mdui-dialog" id="options">
-				<div class="mdui-dialog-title">Are you sure?</div>
-				<div class="mdui-dialog-content">You'll lose all photos and media!</div>
-				<div class="mdui-dialog-actions">
-					<button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
-					<button class="mdui-btn mdui-ripple" mdui-dialog-close>erase</button>
+			<p>警告消息框</p>
+			<button id='alertBtn' type="button" class="mdui-btn mdui-btn-dense mdui-color-theme">点击我</button>
+			<p>确认消息框</p>
+			<button id='confirmBtn' type="button" class="mdui-btn mdui-btn-dense mdui-color-theme">点击我</button>
+			<p>输入对话框</p>
+			<button id='promptBtn' type="button" class="mdui-btn mdui-btn-dense mdui-color-theme">点击我</button>
+			<p>自定义对话框</p>
+			<button type="button" class="mdui-btn mdui-btn-dense mdui-color-theme mdui-ripple" mdui-dialog="{target:'#example-4'}">点击我</button>
+			<div class="mdui-dialog" id="example-4">
+				<div class="mdui-tab mdui-tab-full-width" id="example4-tab">
+					<a href="#example4-tab1" class="mdui-ripple">web</a>
+					<a href="#example4-tab2" class="mdui-ripple">shopping</a>
+					<a href="#example4-tab3" class="mdui-ripple">videos</a>
+				</div>
+				<div id="example4-tab1" class="mdui-p-a-2">
+					<p>tab 1</p>
+					<p>tab 1</p>
+					<p>tab 1</p>
+					<p>tab 1</p>
+					<p>tab 1</p>
+					<p>tab 1</p>
+				</div>
+				<div id="example4-tab2" class="mdui-p-a-2">
+					<p>tab 2</p>
+					<p>tab 2</p>
+					<p>tab 2</p>
+					<p>tab 2</p>
+					<p>tab 2</p>
+					<p>tab 2</p>
+				</div>
+				<div id="example4-tab3" class="mdui-p-a-2">
+					<p>tab 3</p>
+					<p>tab 3</p>
+					<p>tab 3</p>
+					<p>tab 3</p>
+					<p>tab 3</p>
+					<p>tab 3</p>
 				</div>
 			</div>
+
 		</div>
 
 		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
@@ -46,6 +69,37 @@
 		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			API.init();
+			var tab = new mdui.Tab('#example4-tab');
+			document.getElementById('example-4').addEventListener('open.mdui.dialog', function() {
+				tab.handleUpdate();
+			});
+			document.getElementById("alertBtn").addEventListener('tap', function() {
+				// 含回调
+				mdui.alert('content', 'title', function() {
+					console.log('点击了确认按钮');
+				});
+			});
+			document.getElementById("confirmBtn").addEventListener('tap', function() {
+				mdui.confirm('content', 'title',
+					function() {
+						mdui.alert('点击了确认按钮');
+					},
+					function() {
+						mdui.alert('点击了取消按钮');
+					}
+				);
+			});
+			document.getElementById("promptBtn").addEventListener('tap', function() {
+				// 含标题
+				mdui.prompt('请输入文本', 'title',
+					function(value) {
+						mdui.alert('你输入了：' + value + '，点击了确认按钮');
+					},
+					function(value) {
+						mdui.alert('你输入了：' + value + '，点击了取消按钮');
+					}
+				);
+			});
 		</script>
 	</body>
 
