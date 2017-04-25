@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>下拉刷新IOS</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/downRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/swiper-3.4.2.min.css" />
+		<script src="../../js/downRefresh/classie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/downRefresh/segment.js"></script>
+		<script src="../../js/downRefresh/loading-button.js"></script>
+		<style type="text/css">
+			html,
+			body {
+				font-family: "microsoft yahei";
+				position: relative;
+				height: 100%;
+			}
+			
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.swiper-slide {
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">下拉刷新IOS</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<header class="mdui-appbar-fixed">
+						<div class="mdui-toolbar">
+							<div class="showcase main-showcase">
+								<button class="control-button bordered make-it-fail"></button>
+								<button class="loading-button circular-loading left"><span id="refreshText"><i class="mdui-icon material-icons">&#xe5db;</i> 下拉可刷新</span></button>
+								<button class="control-button bordered make-it-succeed"></button>
+							</div>
+						</div>
+					</header>
+
+					<div class="mdui-container" style="padding-top: 56px;">
+						<ul class="mdui-list mdui-list-dense">
+							<li class="mdui-list-item">1</li>
+							<li class="mdui-list-item">2</li>
+							<li class="mdui-list-item">3</li>
+							<li class="mdui-list-item">4</li>
+							<li class="mdui-list-item">5</li>
+							<li class="mdui-list-item">6</li>
+							<li class="mdui-list-item">7</li>
+							<li class="mdui-list-item">8</li>
+							<li class="mdui-list-item">9</li>
+							<li class="mdui-list-item">10</li>
+							<li class="mdui-list-item">11</li>
+							<li class="mdui-list-item">12</li>
+							<li class="mdui-list-item">13</li>
+							<li class="mdui-list-item">14</li>
+							<li class="mdui-list-item">15</li>
+							<li class="mdui-list-item">16</li>
+							<li class="mdui-list-item">17</li>
+							<li class="mdui-list-item">18</li>
+							<li class="mdui-list-item">19</li>
+							<li class="mdui-list-item">20</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Add Scrollbar -->
+			<div class="swiper-scrollbar"></div>
+		</div>
+		<script type="text/template" id="circular-loading">
+			<svg width="120px" height="120px">
+				<path class="outer-path" stroke="#333333" d="M 60 60 m 0 -50 a 50 50 0 1 1 0 100 a 50 50 0 1 1 0 -100"></path>
+				<path class="inner-path" stroke="rgba(102,102,102, 0.5)" d="M 60 60 m 0 -30 a 30 30 0 1 1 0 60 a 30 30 0 1 1 0 -60"></path>
+				<path class="success-path" stroke="#333" d="M 60 10 A 50 50 0 0 1 91 21 L 75 45 L 55 75 L 45 65"></path>
+				<path class="error-path" stroke="#333333" d="M 60 10 A 50 50 0 0 1 95 25 L 45 75"></path>
+				<path class="error-path2" stroke="#333333" d="M 60 30 A 30 30 0 0 1 81 81 L 45 45"></path>
+			</svg>
+		</script>
+		<script src="../../js/jquery2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/downRefresh/demo-functions.js"></script>
+		<script src="../../js/downRefresh/demo.js"></script>
+		<script type="text/javascript">
+			API.init();
+
+			var swiper = new Swiper('.swiper-container', {
+				direction: 'vertical',
+				slidesPerView: 'auto',
+				mousewheelControl: true,
+				scrollbar: '.swiper-scrollbar',
+				scrollbarHide: true,
+				freeMode: true,
+				roundLengths: true, //防止文字模糊
+				onSetTranslate: function(swiper, translate) {
+					//自定义事件
+					if(translate < 1) {
+						//防止冲突掉touchend事件
+						return;
+					}
+					if(translate > 50) {
+						if($("#refreshText").html() == '<i class="mdui-icon material-icons">&#xe863;</i> 松开可刷新') {
+							return;
+						}
+						$("#refreshText").html('<i class="mdui-icon material-icons">&#xe863;</i> 松开可刷新')
+					} else {
+						if($("#refreshText").html() == '<i class="mdui-icon material-icons">&#xe5db;</i> 下拉可刷新') {
+							return;
+						}
+						$("#refreshText").html('<i class="mdui-icon material-icons">&#xe5db;</i> 下拉可刷新')
+					}
+				},
+				onTouchEnd: function(s) {
+					console.log(s.translate);
+					if(s.translate > 50) {
+						$(".swiper-container").css('transition', 'margin-top 0s');
+						$(".swiper-container").css('marginTop', '56px');
+						console.log('刷新中');
+						$(".loading-button").click();
+						mui.later(function() {
+							$(".make-it-succeed").click();
+							mui.later(function() {
+								$(".swiper-container").css('transition', 'margin-top 0.5s');
+								$(".swiper-container").css('marginTop', '0px');
+								console.log('刷新完成');
+							}, 2500);
+						}, 2000);
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

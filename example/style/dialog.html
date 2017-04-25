@@ -73,13 +73,13 @@
 			document.getElementById('example-4').addEventListener('open.mdui.dialog', function() {
 				tab.handleUpdate();
 			});
-			document.getElementById("alertBtn").addEventListener('tap', function() {
+			document.getElementById("alertBtn").addEventListener('click', function() {
 				// 含回调
 				mdui.alert('content', 'title', function() {
 					console.log('点击了确认按钮');
 				});
 			});
-			document.getElementById("confirmBtn").addEventListener('tap', function() {
+			document.getElementById("confirmBtn").addEventListener('click', function() {
 				mdui.confirm('content', 'title',
 					function() {
 						mdui.alert('点击了确认按钮');
@@ -89,7 +89,7 @@
 					}
 				);
 			});
-			document.getElementById("promptBtn").addEventListener('tap', function() {
+			document.getElementById("promptBtn").addEventListener('click', function() {
 				// 含标题
 				mdui.prompt('请输入文本', 'title',
 					function(value) {

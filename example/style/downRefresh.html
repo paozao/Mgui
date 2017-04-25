@@ -14,17 +14,21 @@
 			body {
 				font-family: "microsoft yahei";
 			}
+			.mdui-container{
+				opacity: 0;
+				transition: opacity 0.5s ease-in-out;
+			}
 		</style>
 	</head>
 
 	<body class="mdui-appbar-with-toolbar ">
 		<header class="mdui-appbar-fixed">
 			<div class="mdui-toolbar">
-				<div class="showcase main-showcase">
-			        <button class="control-button bordered make-it-fail"></button>
-			        <button class="loading-button circular-loading left"><span id="refreshText"><i class="mdui-icon material-icons">&#xe5db;</i> 下拉刷新</span></button>
-			        <button class="control-button bordered make-it-succeed"></button>
-			    </div>
+				<div class="showcase main-showcase" style="visibility: hidden;">
+					<button class="control-button bordered make-it-fail"></button>
+					<button class="loading-button circular-loading left"><span id="refreshText"><i class="mdui-icon material-icons">&#xe5db;</i> 下拉刷新</span></button>
+					<button class="control-button bordered make-it-succeed"></button>
+				</div>
 			</div>
 		</header>
 		<div class="mdui-container">
@@ -34,6 +38,21 @@
 				<li class="mdui-list-item">3</li>
 				<li class="mdui-list-item">4</li>
 				<li class="mdui-list-item">5</li>
+				<li class="mdui-list-item">6</li>
+				<li class="mdui-list-item">7</li>
+				<li class="mdui-list-item">8</li>
+				<li class="mdui-list-item">9</li>
+				<li class="mdui-list-item">10</li>
+				<li class="mdui-list-item">11</li>
+				<li class="mdui-list-item">12</li>
+				<li class="mdui-list-item">13</li>
+				<li class="mdui-list-item">14</li>
+				<li class="mdui-list-item">15</li>
+				<li class="mdui-list-item">16</li>
+				<li class="mdui-list-item">17</li>
+				<li class="mdui-list-item">18</li>
+				<li class="mdui-list-item">19</li>
+				<li class="mdui-list-item">20</li>
 			</ul>
 		</div>
 		<script type="text/template" id="circular-loading">
@@ -72,18 +91,19 @@
 		<script src="../../js/downRefresh/demo.js"></script>
 
 		<script type="text/javascript">
-			mui.init({
-				subpages: [{
-					url: 'downSub.html', //子页面HTML地址，支持本地地址和网络地址
-					id: 'downSub', //子页面标志
-					styles: {
-						top: '0px', //子页面顶部位置
-						height: '56px'
-					}
-				}]
-			});
 			API.init();
 			mui.plusReady(function() {
+				var downSub = plus.webview.create('downSub.html','downSub',{
+					top: '0px', //子页面顶部位置
+					height: '56px'
+				})
+				downSub.show('none');
+				downSub.addEventListener('loaded',function(){
+					plus.webview.currentWebview().append(downSub);
+					$(".showcase").css('visibility','visible');
+					$(".mdui-container").css('opacity','1');
+				})
+				
 				var list = plus.webview.currentWebview();
 				list.addEventListener("dragBounce", onPullStateChange, false);
 				list.setBounce({
@@ -106,15 +126,15 @@
 							break;
 						case "dragEndAfterChangeOffset": //正在刷新状态
 							$(".loading-button").click();
-							mui.later(function(){
+							mui.later(function() {
 								$(".make-it-succeed").click();
-								mui.later(function(){
+								mui.later(function() {
 									console.log('刷新完成');
 									list.resetBounce();
-								},2500);
-								
-							},2000);
-							
+								}, 2500);
+
+							}, 2000);
+
 							break;
 						default:
 							break;

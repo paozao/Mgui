@@ -122,7 +122,6 @@ LoadingButton.prototype = {
         classie.remove(this.el, 'open-loading');
         this.span.setAttribute('id','refreshText');
         this.span.innerHTML = '<i class="mdui-icon material-icons">&#xe5db;</i> 下拉刷新';
-        this.span.style.display = 'none';
         classie.remove(this.el, 'succeed');
         classie.remove(this.el, 'failed');
         this.resetSegments();
