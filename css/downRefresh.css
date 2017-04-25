@@ -107,9 +107,9 @@
   bottom: 10px; }
 .loading-button.left svg {
   top: 50%;
-  -webkit-transform: scale(0.25) translateY(-50%);
-      -ms-transform: scale(0.25) translateY(-50%);
-          transform: scale(0.25) translateY(-50%);
+  -webkit-transform: scale(0.4) translateY(-50%);
+      -ms-transform: scale(0.4) translateY(-50%);
+          transform: scale(0.4) translateY(-50%);
   -webkit-transform-origin: 0 0 0;
       -ms-transform-origin: 0 0 0;
           transform-origin: 0 0 0;
