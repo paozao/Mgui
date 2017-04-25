@@ -44,10 +44,10 @@
 				<div class="swiper-slide">
 					<header class="mdui-appbar-fixed">
 						<div class="mdui-toolbar">
-							<div class="showcase main-showcase">
-								<button class="control-button bordered make-it-fail"></button>
+							<div class="showcase main-showcase mdui-center">
+								<button style="display: none;" class="control-button bordered make-it-fail"></button>
 								<button class="loading-button circular-loading left"><span id="refreshText"><i class="mdui-icon material-icons">&#xe5db;</i> 下拉可刷新</span></button>
-								<button class="control-button bordered make-it-succeed"></button>
+								<button style="display: none;" class="control-button bordered make-it-succeed"></button>
 							</div>
 						</div>
 					</header>
@@ -127,11 +127,11 @@
 					}
 				},
 				onTouchEnd: function(s) {
-					console.log(s.translate);
 					if(s.translate > 50) {
 						$(".swiper-container").css('transition', 'margin-top 0s');
 						$(".swiper-container").css('marginTop', '56px');
 						console.log('刷新中');
+						s.lockSwipes();
 						$(".loading-button").click();
 						mui.later(function() {
 							$(".make-it-succeed").click();
@@ -139,6 +139,7 @@
 								$(".swiper-container").css('transition', 'margin-top 0.5s');
 								$(".swiper-container").css('marginTop', '0px');
 								console.log('刷新完成');
+								s.unlockSwipes();
 							}, 2500);
 						}, 2000);
 					}
