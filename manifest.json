@@ -248,7 +248,8 @@
 					"example/base/dialog_native.html",
 					"example/style/dialog.html",
 					"example/style/loading.html",
-					"example/style/downRefresh.html"
+					"example/style/downRefresh.html",
+					"example/style/offcanvas.html"
 				],
 				"priority": 0
 			},
@@ -746,7 +747,10 @@
 				"resources": [
 					"css/mdui.min.css",
 					"js/mdui.min.js",
-					"css/loaderskit.css"
+					"css/loaderskit.css",
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
@@ -780,6 +784,21 @@
 					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"css/mdui.css",
 					"js/mdui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/offcanvas.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"js/swiper-3.4.2.jquery.min.js",
+					"css/swiper-3.4.2.min.css",
+					"icons/material-icons/MaterialIcons-Regular.woff",
+					"js/mui.min.js",
+					"api.js",
+					"css/mdui.css",
+					"js/jquery2.1.4.min.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2"
 				],
 				"refer": [],
 				"priority": 0
