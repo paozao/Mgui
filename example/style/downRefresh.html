@@ -98,24 +98,20 @@
 				function onPullStateChange(e) {
 					switch(e.status) {
 						case "beforeChangeOffset": //下拉可刷新状态
-							console.log('下拉可刷新状态');
 							$("#refreshText").show();
 							$("#refreshText").html('<i class="mdui-icon material-icons">&#xe5db;</i> 下拉可刷新');
 							break;
 						case "afterChangeOffset": //松开可刷新状态
-							console.log('松开可刷新状态');
 							$("#refreshText").html('<i class="mdui-icon material-icons">&#xe863;</i> 松开可刷新');
 							break;
 						case "dragEndAfterChangeOffset": //正在刷新状态
-							console.log('正在刷新状态');
 							$(".loading-button").click();
 							mui.later(function(){
 								$(".make-it-succeed").click();
 								mui.later(function(){
-									
 									console.log('刷新完成');
 									list.resetBounce();
-								},2600);
+								},2500);
 								
 							},2000);
 							
