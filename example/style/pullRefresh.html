@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模板</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/swiper-3.4.2.min.css" />
+		<style type="text/css">
+			html,
+			body {
+				font-family: "microsoft yahei";
+				position: relative;
+				height: 100%;
+			}
+			
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.swiper-slide {
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">上拉加载</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="mdui-container" style="padding-top: 56px;">
+
+						<ul class="mdui-list mdui-list-dense">
+							<li class="mdui-list-item">1</li>
+							<li class="mdui-list-item">2</li>
+							<li class="mdui-list-item">3</li>
+							<li class="mdui-list-item">4</li>
+							<li class="mdui-list-item">5</li>
+							<li class="mdui-list-item">6</li>
+							<li class="mdui-list-item">7</li>
+							<li class="mdui-list-item">8</li>
+							<li class="mdui-list-item">9</li>
+							<li class="mdui-list-item">10</li>
+							<li class="mdui-list-item">11</li>
+							<li class="mdui-list-item">12</li>
+							<li class="mdui-list-item">13</li>
+							<li class="mdui-list-item">14</li>
+							<li class="mdui-list-item">15</li>
+							<li class="mdui-list-item">16</li>
+							<li class="mdui-list-item">17</li>
+							<li class="mdui-list-item">18</li>
+							<li class="mdui-list-item">19</li>
+							<li class="mdui-list-item">20</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Add Scrollbar -->
+			<div class="swiper-scrollbar"></div>
+		</div>
+		<script src="../../js/jquery2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+			var swiper = new Swiper('.swiper-container', {
+				direction: 'vertical',
+				slidesPerView: 'auto',
+				mousewheelControl: true,
+				scrollbar: '.swiper-scrollbar',
+				scrollbarHide: true,
+				freeMode: true,
+				roundLengths: true, //防止文字模糊
+				onTouchEnd: function(s) {
+					if(swiper.isEnd) {
+						console.log('上拉加载开始');
+						mdui.snackbar({
+							message: '上拉加载开始'
+						});
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>
