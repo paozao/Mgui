@@ -74,20 +74,34 @@
 		<script src="../../js/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			API.init();
+			var listNum = 20;
 			var swiper = new Swiper('.swiper-container', {
 				direction: 'vertical',
 				slidesPerView: 'auto',
 				mousewheelControl: true,
+				freeMode: true,
 				scrollbar: '.swiper-scrollbar',
 				scrollbarHide: true,
-				freeMode: true,
 				roundLengths: true, //防止文字模糊
 				onTouchEnd: function(s) {
 					if(swiper.isEnd) {
+						
 						console.log('上拉加载开始');
 						mdui.snackbar({
-							message: '上拉加载开始'
+							message: '加载中...',
+							timeout : 500
 						});
+						s.lockSwipes();
+						mui.later(function(){
+							for(i=0;i<5;i++){
+								listNum = listNum + 1;
+								$(".mdui-list").append('<li class="mdui-list-item">'+listNum+'</li>');
+							}
+							s.unlockSwipes();
+							s.updateSlidesSize();
+						},500);
+						
+						
 					}
 				}
 			})

@@ -250,7 +250,8 @@
 					"example/style/loading.html",
 					"example/style/downRefresh.html",
 					"example/style/offcanvas.html",
-					"example/style/downRefreshIos.html"
+					"example/style/downRefreshIos.html",
+					"example/style/pullRefresh.html"
 				],
 				"priority": 0
 			},
@@ -820,6 +821,20 @@
 					"api.js",
 					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"css/mdui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/pullRefresh.html": {
+				"resources": [
+					"js/mdui.min.js",
+					"js/swiper-3.4.2.jquery.min.js",
+					"css/swiper-3.4.2.min.css",
+					"js/mui.min.js",
+					"api.js",
+					"icons/material-icons/MaterialIcons-Regular.woff2",
+					"css/mdui.css",
+					"js/jquery2.1.4.min.js"
 				],
 				"refer": [],
 				"priority": 0
