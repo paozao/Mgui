@@ -1882,7 +1882,7 @@
           'mousedown',
           'mouseup',
           'mousemove',
-          'click',
+          'tap',
           'mouseover',
           'mouseout',
           'mouseenter',
@@ -2555,7 +2555,7 @@
 
       _this.options = $.extend({}, DEFAULT, (opts || {}));
 
-      _this.$collapse.on('click', '.' + _this.classes.header, function () {
+      _this.$collapse.on('tap', '.' + _this.classes.header, function () {
         var $item = $(this).parent('.' + _this.classes.item);
         if (_this.$collapse.children($item).length) {
           _this.toggle($item);
@@ -3224,7 +3224,7 @@
     $document.on('input focus blur', '.mdui-textfield-input', { useCapture: true }, inputEvent);
 
     // 可展开文本框展开
-    $document.on('click', '.mdui-textfield-expandable .mdui-textfield-icon', function () {
+    $document.on('tap', '.mdui-textfield-expandable .mdui-textfield-icon', function () {
       $(this)
 
         // 展开文本框
@@ -3236,7 +3236,7 @@
     });
 
     // 可展开文本框关闭
-    $document.on('click', '.mdui-textfield-expanded .mdui-textfield-close', function () {
+    $document.on('tap', '.mdui-textfield-expanded .mdui-textfield-close', function () {
       $(this)
 
         // 关闭文本框
@@ -3434,7 +3434,7 @@
      * @type {{}}
      */
     var DEFAULT = {
-      trigger: 'hover',      // 触发方式 ['hover', 'click']
+      trigger: 'hover',      // 触发方式 ['hover', 'tap']
     };
 
     /**
@@ -3476,7 +3476,7 @@
           });
       }
 
-      if (_this.options.trigger === 'click') {
+      if (_this.options.trigger === 'tap') {
         _this.$btn
           .on(TouchHandler.start, function () {
             _this.open();
@@ -3654,7 +3654,7 @@
   mdui.Tab = (function () {
 
     var DEFAULT = {
-      trigger: 'click',       // 触发方式 click: 鼠标点击切换 hover: 鼠标悬浮切换
+      trigger: 'tap',       // 触发方式 click: 鼠标点击切换 hover: 鼠标悬浮切换
       //animation: false,       // 切换时是否显示动画
       loop: false,            // 为true时，在最后一个选项卡时调用 next() 方法会回到第一个选项卡
     };
@@ -3741,14 +3741,14 @@
         };
 
         // 无论 trigger 是 click 还是 hover，都会响应 click 事件
-        $tab.on('click', clickEvent);
+        $tab.on('tap', clickEvent);
 
         // trigger 为 hover 时，额外响应 mouseenter 事件
         if (_this.options.trigger === 'hover') {
           $tab.on('mouseenter', clickEvent);
         }
 
-        $tab.on('click', function (e) {
+        $tab.on('tap', function (e) {
           // 阻止链接的默认点击动作
           if ($tab.attr('href').indexOf('#') === 0) {
             e.preventDefault();
@@ -3971,7 +3971,7 @@
               _this.overlay = true;
               $.lockScreen();
 
-              $('.mdui-overlay').one('click', function () {
+              $('.mdui-overlay').one('tap', function () {
                 _this.close();
               });
             } else {
@@ -3983,7 +3983,7 @@
 
       // 绑定关闭按钮事件
       _this.$drawer.find('[mdui-drawer-close]').each(function () {
-        $(this).on('click', function () {
+        $(this).on('tap', function () {
           _this.close();
         });
       });
@@ -4029,7 +4029,7 @@
 
       if (!isDesktop() || _this.options.overlay) {
         _this.overlay = true;
-        $.showOverlay().one('click', function () {
+        $.showOverlay().one('tap', function () {
           _this.close();
         });
 
@@ -4115,7 +4115,7 @@
         $drawer.data('mdui.drawer', inst);
       }
 
-      $this.on('click', function () {
+      $this.on('tap', function () {
         inst.toggle();
       });
     });
@@ -4247,7 +4247,7 @@
 
       // 绑定取消按钮事件
       _this.$dialog.find('[mdui-dialog-cancel]').each(function () {
-        $(this).on('click', function () {
+        $(this).on('tap', function () {
           componentEvent('cancel', 'dialog', _this, _this.$dialog);
           if (_this.options.closeOnCancel) {
             _this.close();
@@ -4257,7 +4257,7 @@
 
       // 绑定确认按钮事件
       _this.$dialog.find('[mdui-dialog-confirm]').each(function () {
-        $(this).on('click', function () {
+        $(this).on('tap', function () {
           componentEvent('confirm', 'dialog', _this, _this.$dialog);
           if (_this.options.closeOnConfirm) {
             _this.close();
@@ -4267,7 +4267,7 @@
 
       // 绑定关闭按钮事件
       _this.$dialog.find('[mdui-dialog-close]').each(function () {
-        $(this).on('click', function () {
+        $(this).on('tap', function () {
           _this.close();
         });
       });
@@ -4318,7 +4318,7 @@
       $overlay
 
         // 点击遮罩层时是否关闭对话框
-        [_this.options.modal ? 'off' : 'on']('click', overlayClick)
+        [_this.options.modal ? 'off' : 'on']('tap', overlayClick)
 
         // 是否显示遮罩层，不显示时，把遮罩层背景透明
         .css('opacity', _this.options.overlay ? '' : 0);
@@ -4505,7 +4505,7 @@
    */
 
   $(function () {
-    $document.on('click', '[mdui-dialog]', function () {
+    $document.on('tap', '[mdui-dialog]', function () {
       var $this = $(this);
       var options = parseOptions($this.attr('mdui-dialog'));
       var selector = options.target;
@@ -4615,7 +4615,7 @@
     // 绑定按钮事件
     if (options.buttons.length) {
       inst.$dialog.find('.mdui-dialog-actions .mdui-btn').each(function (i, button) {
-        $(button).on('click', function () {
+        $(button).on('tap', function () {
           if (typeof options.buttons[i].onClick === 'function') {
             options.buttons[i].onClick(inst);
           }
@@ -5328,7 +5328,7 @@
           if (_this.options.buttonText) {
             _this.$snackbar
               .find('.mdui-snackbar-action')
-              .on('click', function () {
+              .on('tap', function () {
                 _this.options.onButtonClick();
                 if (_this.options.closeOnButtonClick) {
                   _this.close();
@@ -5337,7 +5337,7 @@
           }
 
           // 点击 snackbar 的事件
-          _this.$snackbar.on('click', function (e) {
+          _this.$snackbar.on('tap', function (e) {
             if (!$(e.target).hasClass('mdui-snackbar-action')) {
               _this.options.onClick();
             }
@@ -5413,7 +5413,7 @@
   (function () {
 
     // 切换导航项
-    $document.on('click', '.mdui-bottom-nav>a', function () {
+    $document.on('tap', '.mdui-bottom-nav>a', function () {
       var $this = $(this);
       var $bottomNav = $this.parent();
       var isThis;
@@ -5565,7 +5565,7 @@
       gutter: 16,               // 菜单距离窗口边缘的最小距离，单位 px
       fixed: false,             // 是否使菜单固定在窗口，不随滚动条滚动
       covered: 'auto',          // 菜单是否覆盖在触发它的元素上，true、false。auto 时简单菜单覆盖，级联菜单不覆盖
-      subMenuTrigger: 'hover',  // 子菜单的触发方式 hover、click
+      subMenuTrigger: 'tap',  	// 子菜单的触发方式 hover、click
       subMenuDelay: 200,        // 子菜单的触发延时，仅在 submenuTrigger 为 hover 有效
     };
 
@@ -5891,7 +5891,7 @@
      */
     var bindSubMenuEvent = function (inst) {
       // 点击打开子菜单
-      inst.$menu.on('click', '.mdui-menu-item', function (e) {
+      inst.$menu.on('tap', '.mdui-menu-item', function (e) {
         var $this = $(this);
         var $target = $(e.target);
 
@@ -6056,12 +6056,12 @@
       }
 
       // 点击触发菜单切换
-      _this.$anchor.on('click', function () {
+      _this.$anchor.on('tap', function () {
         _this.toggle();
       });
 
       // 点击菜单外面区域关闭菜单
-      $document.on('click touchstart', function (e) {
+      $document.on('tap touchstart', function (e) {
         var $target = $(e.target);
         if (
           (_this.state === 'opening' || _this.state === 'opened') &&
@@ -6075,7 +6075,7 @@
       });
 
       // 点击不含子菜单的菜单条目关闭菜单
-      $document.on('click', '.mdui-menu-item', function (e) {
+      $document.on('tap', '.mdui-menu-item', function (e) {
         var $this = $(this);
         if (!$this.find('.mdui-menu').length && $this.attr('disabled') === null) {
           _this.close();
@@ -6193,7 +6193,7 @@
    */
 
   $(function () {
-    $document.on('click', '[mdui-menu]', function () {
+    $document.on('tap', '[mdui-menu]', function () {
       var $this = $(this);
 
       var inst = $this.data('mdui.menu');
