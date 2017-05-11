@@ -6,11 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<title>Mgui</title>
+		<title>首页</title>
 		<link rel="stylesheet" type="text/css" href="css/mdui.css" />
 		<style type="text/css">
 			body {
 				font-family: "microsoft yahei";
+			}
+			#loading {
+				position: absolute;
+				text-align: center;
+				left: 0;
+				right: 0;
+				top: 45%;
+				bottom: 0;
+				margin: auto;
+				display: none;
+			}
+			
+			.mui-action-back {
+				display: none;
 			}
 		</style>
 	</head>
@@ -18,11 +32,11 @@
 	<body class="mdui-appbar-with-toolbar">
 		<header class="mdui-toolbar mdui-appbar-fixed mdui-color-theme" style="z-index: 2;">
 			<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
-			<span class="mdui-typo-title">开始</span>
-			<div class="mdui-toolbar-spacer"></div>
+			<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+			<span id="title" class="mdui-typo-title">开始</span>
 		</header>
 
-		<div class="mdui-container-fluid">
+		<div class="mdui-container-fluid" id="pjax-container">
 			<ul class="mdui-list" mdui-collapse="{accordion: true}">
 				<li class="mdui-collapse-item mdui-collapse-item-open">
 					<div class="mdui-collapse-item-header mdui-list-item ">
@@ -81,6 +95,8 @@
 						<li class="mdui-list-item golocal" data-href="example/style/pullRefresh.html">上拉加载</li>
 						<li class="mdui-divider-inset mdui-m-y-0"></li>
 						<li class="mdui-list-item golocal" data-href="example/style/offcanvas.html">侧滑导航</li>
+						<li class="mdui-divider-inset mdui-m-y-0"></li>
+						<a href="example/style/pjax.html"><li class="mdui-list-item">Pjax页面跳转</li></a>
 					</ul>
 				</li>
 				
@@ -116,6 +132,9 @@
 			</ul>
 
 		</div>
+		<div id="loading">
+			<div class="mdui-spinner mdui-spinner-colorful"></div>
+		</div>
 		<script src="js/jquery2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.pjax.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/mui.min.js"></script>
@@ -137,6 +156,39 @@
 			document.getElementById("iconWeb").addEventListener('tap',function(){
 				API.openWeb('http://www.mdui.org/docs/material_icon');
 			});
+			if($.support.pjax) {
+				$(document).pjax('a', '#pjax-container', {
+					fragment: '#pjax-container',
+					timeout: 5000,
+				});
+				$(document).on('pjax:send', function() {
+					$("#pjax-container").hide();
+					$("#loading").show();
+				})
+				$(document).on('pjax:end', function(e) {
+					console.log(e.currentTarget.title);
+					$("#title").text(e.currentTarget.title);
+					$("header a").hide();
+					$(".mui-action-back").show();
+					mui.later(function() {
+						$("#loading").hide();
+						$("#pjax-container").fadeIn();
+					}, 2000)
+					if(e.currentTarget.title == '首页') {
+						$("header a").show();
+						$(".mui-action-back").hide();
+						var inst = new mdui.Collapse('.mdui-list', {
+							accordion: true
+						});
+						mui('.golocal').each(function() {
+							this.addEventListener('tap', function() {
+								var gohref = this.getAttribute('data-href');
+								API.openWindow(gohref,gohref);
+							});
+						})
+					}
+				})
+			}
 		</script>
 	</body>
 
