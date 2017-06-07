@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>时间轴</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/mdui.css" />
+		<style type="text/css">
+			body {
+				font-family: "microsoft yahei";
+			}
+			.mdui-setp {
+				border-left: 1px solid #E0E0E0;
+				margin-left: 24px;
+				margin-bottom: 16px;
+			}
+			
+			.mdui-step-title {
+				margin-left: -24px;
+				background-color: white;
+			}
+			
+			.mdui-step-content {
+				margin-left: 24px;
+			}
+			
+		</style>
+	</head>
+
+	<body class="mdui-appbar-with-toolbar">
+		<header class="mdui-appbar mdui-appbar-fixed mdui-color-theme">
+			<div class="mdui-toolbar">
+				<a href="javascript:;" class="mdui-btn mdui-btn-icon mui-action-back"><i class="mdui-icon material-icons">&#xe5c4;</i></a>
+				<span class="mdui-typo-title">菜单</span>
+				<div class="mdui-toolbar-spacer"></div>
+			</div>
+		</header>
+		<div class="mdui-container">
+			<div class="mdui-typo">
+				<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">时间轴</h2>
+			</div>
+			<div class="mdui-setp">
+				<div class="mdui-step-title mdui-m-p-1">
+					<h5 class="mdui-valign"><button class="mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-m-a-1">
+							<i class="mdui-icon material-icons">&#xe5ca;</i></button><b class="mdui-text-color-theme-accent">恭喜您中奖了</b>
+						</h5>
+				</div>
+				<div class="mdui-step-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell" id="chooseRewards">
+							<div class="mui-input-row mui-radio mui-left">
+								<label>我要奖品</label>
+								<input name="radio" type="radio">
+							</div>
+
+						</li>
+						<li class="mui-table-view-cell" id="chooseShop">
+							<div class="mui-input-row mui-radio mui-left">
+								<label>我要转让</label>
+								<input name="radio" type="radio">
+							</div>
+						</li>
+					</ul>
+					<p id="chooseText"></p>
+					<div class="mui-row mdui-text-center">
+						<label class="mdui-checkbox" style="font-size: 12px;">
+							  <input type="checkbox"/>
+							  <i class="mdui-checkbox-icon"></i>
+							  我已阅读并同意《服务协议》
+							</label>
+					</div>
+					<div class="mui-row">
+						<button class="mdui-btn mui-pull-right mdui-color-theme-accent">下一步</button>
+					</div>
+
+				</div>
+				<div class="mdui-step-title mdui-m-p-1">
+					<h5 class="mdui-valign"><button class="mdui-btn-icon mdui-btn-dense mdui-m-a-1">2</button>
+							<span id="stepTitle_1">请填写收货地址</span>
+						</h5>
+				</div>
+				<div class="mdui-step-content">
+					<div class="mdui-textfield mui-input-row mdui-p-l-2 mdui-p-r-2">
+						<input class="mdui-textfield-input mui-input-clear" type="text" placeholder="收货人姓名" />
+					</div>
+					<div class="mdui-textfield mui-input-row mdui-p-l-2 mdui-p-r-2">
+						<input class="mdui-textfield-input mui-input-clear" type="number" placeholder="手机号码" />
+					</div>
+					<div class="mdui-textfield mui-input-row mdui-p-l-2 mdui-p-r-2">
+						<textarea class="mdui-textfield-input" placeholder="详细地址" maxlength="30"></textarea>
+					</div>
+					<div class="mui-row">
+						<button class="mdui-btn mui-pull-right mdui-color-theme-accent">下一步</button>
+					</div>
+				</div>
+				<div class="mdui-step-title mdui-m-p-1">
+					<h5 class="mdui-valign"><button class="mdui-btn-icon mdui-btn-dense mdui-m-a-1">3</button>商家已确认信息</h5>
+				</div>
+				<div class="mdui-step-content">
+					<p>请先完成上一步内容</p>
+				</div>
+				<div class="mdui-step-title mdui-m-p-1">
+					<h5 class="mdui-valign"><button class="mdui-btn-icon mdui-btn-dense mdui-m-a-1">4</button>商家已派送</h5>
+				</div>
+				<div class="mdui-step-content">
+					<p>请先完成上一步内容</p>
+				</div>
+				<div class="mdui-step-title mdui-m-p-1">
+					<h5 class="mdui-valign"><button class="mdui-btn-icon mdui-btn-dense mdui-m-a-1">5</button>确认收货</h5>
+				</div>
+				<div class="mdui-step-content">
+					<p>请先完成上一步内容</p>
+					<div class="mui-row mdui-m-b-3">
+						<button class="mdui-btn mui-pull-right mdui-color-theme-accent">确认收货</button>
+					</div>
+				</div>
+				<div class="mdui-step-title mdui-m-p-1">
+					<h5 class="mdui-valign"><button class="mdui-btn-icon mdui-btn-dense mdui-m-a-1">6</button>去晒单</h5>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			API.init();
+		</script>
+	</body>
+
+</html>
