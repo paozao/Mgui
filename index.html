@@ -141,7 +141,7 @@
 		<script src="js/mdui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="api.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
-			API.init();
+			api.init();
 			//去掉页面滚动条
 			/*plus.webview.currentWebview().setStyle({
 			scrollIndicator: 'none'
@@ -150,11 +150,11 @@
 			mui('.golocal').each(function() {
 				this.addEventListener('tap', function() {
 					var gohref = this.getAttribute('data-href');
-					API.openWindow(gohref,gohref);
+					api.openWindow(gohref,gohref);
 				});
 			})
 			document.getElementById("iconWeb").addEventListener('tap',function(){
-				API.openWeb('http://www.mdui.org/docs/material_icon');
+				api.openWeb('http://www.mdui.org/docs/material_icon');
 			});
 			if($.support.pjax) {
 				$(document).pjax('a', '#pjax-container', {
@@ -183,7 +183,7 @@
 						mui('.golocal').each(function() {
 							this.addEventListener('tap', function() {
 								var gohref = this.getAttribute('data-href');
-								API.openWindow(gohref,gohref);
+								api.openWindow(gohref,gohref);
 							});
 						})
 					}

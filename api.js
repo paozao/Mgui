@@ -1,6 +1,6 @@
 /*!
  * 
- * 接口 API
+ * 接口 api
  * 
  * 功能列表：（例子）
  * 1 - 基础配置
@@ -14,7 +14,7 @@
  * 		99.3 -	跳转本地页面方法
  * 		99.4 - 	跳转线上页面方法
  * Use it:
- * >API.sayFuck();
+ * >api.sayFuck();
  * 
  * ps: 模仿 jQuery库结构实现，方便上游灵活使用
  * 
@@ -154,7 +154,21 @@
 		};
 		mui.openWindow('window.html', 'window.html', newStyles);
 	}
-	
+	//99.5查询元素是否有指定类
+	api.hasClass = function(obj, cls) {
+		return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+	}
+	//99.6为元素添加指定类
+	api.addClass = function(obj, cls) {
+		if(!api.hasClass(obj, cls)) obj.className += " " + cls;
+	}
+	//99.7为元素删除指定类
+	api.removeClass = function(obj, cls) {
+		if(api.hasClass(obj, cls)) {
+			var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+			obj.className = obj.className.replace(reg, ' ');
+		}
+	}
 	window.api = api;
 	
 	

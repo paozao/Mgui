@@ -4065,7 +4065,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 			}
 			return 'translate(' + x + 'px,' + y + 'px) ';
 		},
-		//API
+		//api
 		setStopped: function(stopped) {
 			this.stopped = !!stopped;
 		},
@@ -4399,7 +4399,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 			this.hasVerticalScroll = true;
 			this._super();
 		},
-		//API
+		//api
 		resetPosition: function(time) {
 			if (this.pulldown) {
 				if (this.y >= this.options.down.height) {
@@ -4830,7 +4830,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 				$.trigger(this.wrapper, 'scrollend', this);
 			}
 		},
-		//API
+		//api
 		setTranslate: function(x, y) {
 			this._super(x, y);
 			var progressBar = this.progressBar;

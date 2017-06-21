@@ -556,20 +556,20 @@
 		<script src="../../js/mdui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../api.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			API.init();
+			api.init();
 		</script>
 		<script type="text/javascript">
 			var layout = document.getElementsByName("doc-theme-layout");
 			var accent = document.getElementsByName("doc-theme-accent");
 			var primary = document.getElementsByName("doc-theme-primary");
 			if(localStorage.getItem('primary')){
-				API.addClass(document.querySelector('body'), 'mdui-theme-primary-' + localStorage.getItem('primary'));
+				api.addClass(document.querySelector('body'), 'mdui-theme-primary-' + localStorage.getItem('primary'));
 			}
 			if(localStorage.getItem('accent')){
-				API.addClass(document.querySelector('body'), 'mdui-theme-accent-' + localStorage.getItem('accent'));
+				api.addClass(document.querySelector('body'), 'mdui-theme-accent-' + localStorage.getItem('accent'));
 			}
 			if(localStorage.getItem('layout')){
-				API.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+				api.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
 			}
 			//主题颜色选择
 			document.getElementById("themeChoose").addEventListener('confirm.mdui.dialog', function(e) {
@@ -587,15 +587,15 @@
 				}
 				var nowPrimary = localStorage.getItem('primary');
 				if(nowPrimary !== primary) {
-					API.removeClass(document.querySelector('body'), 'mdui-theme-primary-' + nowPrimary);
-					API.addClass(document.querySelector('body'), 'mdui-theme-primary-' + primary);
+					api.removeClass(document.querySelector('body'), 'mdui-theme-primary-' + nowPrimary);
+					api.addClass(document.querySelector('body'), 'mdui-theme-primary-' + primary);
 					localStorage.setItem('primary', primary);
 				}
 				if(layout == 'dark') {
-					API.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+					api.addClass(document.querySelector('body'), 'mdui-theme-layout-dark');
 					localStorage.setItem('layout', layout);
 				} else {
-					API.removeClass(document.querySelector('body'), 'mdui-theme-layout-dark');
+					api.removeClass(document.querySelector('body'), 'mdui-theme-layout-dark');
 					localStorage.removeItem('layout');
 				}
 			})
@@ -609,8 +609,8 @@
 				}
 				var nowAccent = localStorage.getItem('accent');
 				if(nowAccent !== accent) {
-					API.removeClass(document.querySelector('body'), 'mdui-theme-accent-' + nowAccent);
-					API.addClass(document.querySelector('body'), 'mdui-theme-accent-' + accent);
+					api.removeClass(document.querySelector('body'), 'mdui-theme-accent-' + nowAccent);
+					api.addClass(document.querySelector('body'), 'mdui-theme-accent-' + accent);
 					localStorage.setItem('accent', accent);
 				}
 			})

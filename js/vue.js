@@ -4326,7 +4326,7 @@ var builtInComponents = {
 
 /*  */
 
-function initGlobalAPI (Vue) {
+function initGlobalapi (Vue) {
   // config
   var configDef = {};
   configDef.get = function () { return config; };
@@ -4340,7 +4340,7 @@ function initGlobalAPI (Vue) {
   Object.defineProperty(Vue, 'config', configDef);
 
   // exposed util methods.
-  // NOTE: these are not considered part of the public API - avoid relying on
+  // NOTE: these are not considered part of the public api - avoid relying on
   // them unless you are aware of the risk.
   Vue.util = {
     warn: warn,
@@ -4370,7 +4370,7 @@ function initGlobalAPI (Vue) {
   initAssetRegisters(Vue);
 }
 
-initGlobalAPI(Vue$3);
+initGlobalapi(Vue$3);
 
 Object.defineProperty(Vue$3.prototype, '$isServer', {
   get: isServerRendering

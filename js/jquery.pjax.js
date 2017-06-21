@@ -639,7 +639,7 @@ function optionsFor(container, options) {
 
 // Internal: Find container element for a variety of inputs.
 //
-// Because we can't persist elements using the history API, we must be
+// Because we can't persist elements using the history api, we must be
 // able to find a String selector that will consistently find the Element.
 //
 // container - A selector String, jQuery object, or DOM Element.
