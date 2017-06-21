@@ -13,9 +13,6 @@
  * 		99.2 -	构建远程AJAX路径(GET)
  * 		99.3 -	跳转本地页面方法
  * 		99.4 - 	跳转线上页面方法
- * 		99.5 - 	查询元素是否有指定类
- * 		99.6 - 	为元素添加指定类
- * 		99.7 - 	为元素删除指定类
  * Use it:
  * >API.sayFuck();
  * 
@@ -158,26 +155,7 @@
 		mui.openWindow('window.html', 'window.html', newStyles);
 	}
 	
-	//99.5查询元素是否有指定类
-	api.hasClass = function(obj, cls) {
-		return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-	}
-	//99.6为元素添加指定类
-	api.addClass = function(obj, cls) {
-		if(!api.hasClass(obj, cls)) obj.className += " " + cls;
-	}
-	//99.7为元素删除指定类
-	api.removeClass = function(obj, cls) {
-		if(api.hasClass(obj, cls)) {
-			var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
-			obj.className = obj.className.replace(reg, ' ');
-		}
-	}
-	// 接口定义状态
-	api.SUCC = true;
-	api.FAIL = false;
-
-	window.API = api;
+	window.api = api;
 	
 	
 })();
