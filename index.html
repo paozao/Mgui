@@ -146,7 +146,13 @@
 			/*plus.webview.currentWebview().setStyle({
 			scrollIndicator: 'none'
 			});*/
+			mui.plusReady(function () {
+			    //定义状态栏颜色为深紫色，文字为白色
+				plus.navigator.setStatusBarBackground('#283593');
+				plus.navigator.setStatusBarStyle('light')
+			})
 			//点击列表的通用方法
+			
 			mui('.golocal').each(function() {
 				this.addEventListener('tap', function() {
 					var gohref = this.getAttribute('data-href');

@@ -205,7 +205,8 @@
 					"api.js",
 					"icons/material-icons/MaterialIcons-Regular.ttf",
 					"js/jquery2.1.4.min.js",
-					"js/jquery.pjax.js"
+					"js/jquery.pjax.js",
+					"example/style/pjax.html"
 				],
 				"refer": [
 					"example/touchFeel.html",
@@ -704,7 +705,8 @@
 					"api.js",
 					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"css/mdui.css",
-					"js/mdui.min.js"
+					"js/mdui.min.js",
+					"images/card.jpg"
 				],
 				"refer": [],
 				"priority": 0
@@ -718,7 +720,9 @@
 					"js/mui.min.js",
 					"api.js",
 					"icons/material-icons/MaterialIcons-Regular.woff2",
-					"css/mdui.css"
+					"css/mdui.css",
+					"fonts/roboto/Roboto-Regular.woff",
+					"fonts/roboto/Roboto-Medium.woff"
 				],
 				"refer": [],
 				"priority": 0
@@ -820,7 +824,8 @@
 					"js/mui.min.js",
 					"api.js",
 					"icons/material-icons/MaterialIcons-Regular.woff2",
-					"css/mdui.css"
+					"css/mdui.css",
+					"icons/material-icons/MaterialIcons-Regular.woff"
 				],
 				"refer": [],
 				"priority": 0
@@ -835,6 +840,13 @@
 					"icons/material-icons/MaterialIcons-Regular.woff2",
 					"css/mdui.css",
 					"js/jquery2.1.4.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"example/style/pjax.html": {
+				"resources": [
+					"example/style/pjax.html"
 				],
 				"refer": [],
 				"priority": 0
