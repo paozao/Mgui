@@ -1,10 +1,10 @@
 {
 	"@platforms": ["android", "iPhone"],
 	"id": "com.hamero.mgui",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "goodMui",/*应用名称，程序桌面图标名称*/
+	"name": "Mgui",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.0.1",/*应用版本名称*/
-		"code": "100010"
+		"name": "1.0.2",/*应用版本名称*/
+		"code": "100020"
 	},
 	"description": "",/*应用描述信息*/
 	"icons": {
@@ -35,33 +35,22 @@
             "description": "应用扩展事件"
         },
         
-        "Gallery": {
-            "description": "访问系统相册"
-        },
+        
         "Geolocation": {
             "description": "访问位置信息"
         },
          "Invocation": {
             "description": "使用Native.js能力"
         },
-        
-        
-        
         "Storage": {
             "description": "管理应用本地数据"
         },
-        
-        
         "Runtime": {
             "description": "访问运行期环境"
         },
         "XMLHttpRequest": {
             "description": "跨域网络访问"
         },
-        
-        
-        
-        
         "Webview":{
         	"description": "窗口管理"
         },
